@@ -168,7 +168,10 @@ const i18n = {
     "final.desc": "We are building the next generation of useful, connected technology products from the UAE to the world.",
     "final.cta": "Build with us",
     "footer.tag": "Building Intelligent Ecosystems for a Smarter Tomorrow.",
-    "footer.rights": "All rights reserved."
+    "footer.rights": "All rights reserved.",
+    "legal.privacy": "Privacy Policy",
+    "legal.terms": "Terms of Service",
+    "legal.disclaimer": "Disclaimer"
   },
 
   ar: {
@@ -340,7 +343,10 @@ const i18n = {
     "final.desc": "نبني جيلاً جديداً من المنتجات التقنية الذكية والمترابطة لننطلق بها من دولة الإمارات إلى العالم.",
     "final.cta": "ابنِ معنا وشكّل المستقبل",
     "footer.tag": "نبني منظومات ذكية لغدٍ أكثر ابتكاراً ونماءً.",
-    "footer.rights": "جميع الحقوق محفوظة."
+    "footer.rights": "جميع الحقوق محفوظة.",
+    "legal.privacy": "سياسة الخصوصية",
+    "legal.terms": "شروط الاستخدام",
+    "legal.disclaimer": "إخلاء المسؤولية"
   }
 };
 

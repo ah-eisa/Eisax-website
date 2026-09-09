@@ -1,0 +1,22 @@
+# Cloudflare Pages Clean Rewrites (Pretty URLs for Legal Pages)
+/privacy      /privacy.html      200
+/privacy/     /privacy.html      200
+/terms        /terms.html        200
+/terms/       /terms.html        200
+/disclaimer   /disclaimer.html   200
+/disclaimer/  /disclaimer.html   200
+
+# Legacy Portfolio & Blog 301 Redirects
+/insights     /                  301
+/insights/*   /                  301
+/blog         /                  301
+/blog/*       /                  301
+/about        /                  301
+/about/*      /                  301
+/contact      /                  301
+/contact/*    /                  301
+/projects     /                  301
+/projects/*   /                  301
+/cv           /                  301
+/experience   /                  301
+/certifications /                301
