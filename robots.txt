@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://eisax.com/sitemap.xml

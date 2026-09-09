@@ -7,10 +7,15 @@
   <meta name="description" content="EISAX builds AI-powered solutions across investment intelligence, wealth infrastructure, lending, digital assets, communication and education.">
   <meta property="og:title" content="EISAX | Intelligent Ecosystems">
   <meta property="og:description" content="One vision. Multiple intelligent solutions. Infinite possibilities.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eisax.com/">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EISAX | Intelligent Ecosystems">
+  <meta name="twitter:description" content="One vision. Multiple intelligent solutions. Infinite possibilities.">
+  <link rel="canonical" href="https://eisax.com/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <script src="/main.js" defer></script>
 </head>
@@ -18,6 +23,7 @@
   <div class="ambient ambient-a"></div>
   <div class="ambient ambient-b"></div>
 
+  <!-- Sticky Site Header -->
   <header class="site-header">
     <div class="shell nav-wrap">
       <a class="brand" href="#top" aria-label="EISAX home">
@@ -36,12 +42,44 @@
       <div class="nav-actions">
         <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">◐</button>
         <button class="lang-btn" id="langToggle" type="button">AR</button>
-        <a class="btn btn-small btn-primary" href="#products" data-i18n="nav.explore">Explore Products</a>
+        <a class="btn btn-small btn-primary desktop-cta" href="#products" data-i18n="nav.explore">Explore Products</a>
+        <button class="icon-btn mobile-toggle" id="mobileToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
       </div>
     </div>
   </header>
 
+  <!-- Mobile Navigation Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <div class="brand">
+        <span class="brand-mark">E</span>
+        <span class="brand-word">EISAX</span>
+      </div>
+      <button class="icon-btn close-drawer" id="closeDrawer" type="button" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="#ecosystem" class="mobile-nav-link" data-i18n="nav.ecosystem">Ecosystem</a>
+      <a href="#products" class="mobile-nav-link" data-i18n="nav.products">Products</a>
+      <a href="#solutions" class="mobile-nav-link" data-i18n="nav.solutions">Solutions</a>
+      <a href="#innovation" class="mobile-nav-link" data-i18n="nav.innovation">Innovation</a>
+      <a href="#company" class="mobile-nav-link" data-i18n="nav.company">Company</a>
+    </nav>
+    <div class="drawer-footer">
+      <div class="drawer-controls">
+        <button class="lang-btn" id="langToggleMobile" type="button">AR</button>
+        <button class="icon-btn" id="themeToggleMobile" type="button" aria-label="Toggle theme">◐</button>
+      </div>
+      <a class="btn btn-primary btn-block" href="#products" id="mobileExploreBtn" data-i18n="nav.explore">Explore Products</a>
+    </div>
+  </aside>
+
   <main id="top">
+    <!-- Hero Section -->
     <section class="hero shell">
       <div class="hero-copy">
         <div class="eyebrow" data-i18n="hero.eyebrow">AI-powered products built in the UAE for a connected world</div>
@@ -75,40 +113,45 @@
           </div>
 
           <button class="node node-1" data-target="investment">
-            <span class="node-icon">◈</span><span>Investment</span>
+            <span class="node-icon">◈</span><span data-i18n="node.investment">Investment</span>
           </button>
           <button class="node node-2" data-target="wealthgate">
-            <span class="node-icon">▣</span><span>Wealth</span>
+            <span class="node-icon">▣</span><span data-i18n="node.wealth">Wealth</span>
           </button>
           <button class="node node-3" data-target="planner">
-            <span class="node-icon">%</span><span>Lending</span>
+            <span class="node-icon">%</span><span data-i18n="node.lending">Lending</span>
           </button>
-          <button class="node node-4" data-target="brevoya">
-            <span class="node-icon">文</span><span>Connect</span>
+          <button class="node node-4" data-target="savebuddy">
+            <span class="node-icon">♡</span><span data-i18n="node.savings">Savings</span>
           </button>
-          <button class="node node-5" data-target="equiz">
-            <span class="node-icon">✓</span><span>Learn</span>
+          <button class="node node-5" data-target="brevoya">
+            <span class="node-icon">文</span><span data-i18n="node.connect">Connect</span>
           </button>
-          <button class="node node-6" data-target="digital">
-            <span class="node-icon">◇</span><span>Digital</span>
+          <button class="node node-6" data-target="equiz">
+            <span class="node-icon">✓</span><span data-i18n="node.learn">Learn</span>
+          </button>
+          <button class="node node-7" data-target="digital">
+            <span class="node-icon">◇</span><span data-i18n="node.digital">Digital</span>
           </button>
         </div>
       </div>
     </section>
 
+    <!-- Trust Strip -->
     <section class="trust-strip">
       <div class="shell trust-inner">
-        <span data-i18n="trust.title">Built around five principles</span>
+        <span data-i18n="trust.title">Built around five core principles</span>
         <div class="trust-items">
-          <span>AI-Powered</span>
-          <span>Secure</span>
-          <span>Smart</span>
-          <span>Compliant</span>
-          <span>Global</span>
+          <span data-i18n="trust.i1">AI-Powered</span>
+          <span data-i18n="trust.i2">Secure</span>
+          <span data-i18n="trust.i3">Smart</span>
+          <span data-i18n="trust.i4">Compliant</span>
+          <span data-i18n="trust.i5">Global</span>
         </div>
       </div>
     </section>
 
+    <!-- Ecosystem Pillars -->
     <section class="section shell" id="ecosystem">
       <div class="section-head centered">
         <div class="section-kicker" data-i18n="eco.kicker">THE EISAX ECOSYSTEM</div>
@@ -124,7 +167,11 @@
           <h3 data-i18n="world.finance.title">Finance & Wealth</h3>
           <p data-i18n="world.finance.desc">Institutional intelligence, wealth infrastructure, lending and financial wellness.</p>
           <div class="world-tags">
-            <span>Investment Intelligence</span><span>WealthGate AI</span><span>Planner</span><span>SaveBuddy AI</span><span>Digital Assets</span>
+            <span data-i18n="tag.invest">Investment Intelligence</span>
+            <span data-i18n="tag.wealth">WealthGate AI</span>
+            <span data-i18n="tag.planner">Planner</span>
+            <span data-i18n="tag.savebuddy">SaveBuddy AI</span>
+            <span data-i18n="tag.digital">Digital Assets</span>
           </div>
         </article>
 
@@ -132,25 +179,26 @@
           <div class="world-icon">◎</div>
           <h3 data-i18n="world.communication.title">Communication</h3>
           <p data-i18n="world.communication.desc">Multilingual communication designed to remove language barriers in real time.</p>
-          <div class="world-tags"><span>Brevoya</span></div>
+          <div class="world-tags"><span data-i18n="tag.brevoya">Brevoya</span></div>
         </article>
 
         <article class="world-card world-education">
           <div class="world-icon">✓</div>
           <h3 data-i18n="world.education.title">Education</h3>
           <p data-i18n="world.education.desc">AI-assisted engagement tools for teachers and students.</p>
-          <div class="world-tags"><span>E-Quiz</span></div>
+          <div class="world-tags"><span data-i18n="tag.equiz">E-Quiz</span></div>
         </article>
 
         <article class="world-card world-innovation">
           <div class="world-icon">✦</div>
           <h3 data-i18n="world.innovation.title">Ventures & Innovation</h3>
           <p data-i18n="world.innovation.desc">A launchpad for emerging technologies, new ideas and future EISAX products.</p>
-          <div class="world-tags"><span>Innovation Lab</span></div>
+          <div class="world-tags"><span data-i18n="tag.lab">Innovation Lab</span></div>
         </article>
       </div>
     </section>
 
+    <!-- Products Grid -->
     <section class="section section-soft" id="products">
       <div class="shell">
         <div class="section-head split">
@@ -162,12 +210,13 @@
         </div>
 
         <div class="products-grid">
+          <!-- 1. Investment Intelligence -->
           <article class="product-card featured" id="investment">
             <div class="product-top">
-              <span class="product-pill">Finance & Wealth</span>
-              <span class="product-symbol">◈</span>
+              <span class="product-pill" data-i18n="pill.finance">Finance & Wealth</span>
+              <span class="product-badge badge-flagship" data-i18n="badge.flagship">Flagship AI</span>
             </div>
-            <h3>EISAX Investment Intelligence</h3>
+            <h3 data-i18n="p.invest.title">EISAX Investment Intelligence</h3>
             <p class="product-sub" data-i18n="p.invest.sub">AI-Powered Investment Research & Portfolio Intelligence</p>
             <p data-i18n="p.invest.desc">Institutional-grade analytics for assets, portfolios, risk, performance, optimization, macro regimes and stress testing.</p>
             <ul>
@@ -176,15 +225,16 @@
               <li data-i18n="p.invest.f3">Risk, attribution & stress testing</li>
               <li data-i18n="p.invest.f4">EISAX Agent, your AI research copilot</li>
             </ul>
-            <a href="#company" class="text-link" data-i18n="common.learn">Learn more →</a>
+            <a href="https://agent.eisax.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.launchAgent">Launch EISAX Agent →</a>
           </article>
 
+          <!-- 2. WealthGate AI -->
           <article class="product-card" id="wealthgate">
             <div class="product-top">
-              <span class="product-pill">Finance & Wealth</span>
-              <span class="product-badge">Flagship</span>
+              <span class="product-pill" data-i18n="pill.finance">Finance & Wealth</span>
+              <span class="product-badge" data-i18n="badge.flagship">Flagship</span>
             </div>
-            <h3>WealthGate AI</h3>
+            <h3 data-i18n="p.wealth.title">WealthGate AI</h3>
             <p class="product-sub" data-i18n="p.wealth.sub">Digital Wealth Infrastructure</p>
             <p data-i18n="p.wealth.desc">An all-in-one client and operating portal for wealth managers and financial institutions.</p>
             <ul>
@@ -195,12 +245,13 @@
             <a href="https://wealthgateai.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.visit">Visit product →</a>
           </article>
 
+          <!-- 3. EISAX Planner -->
           <article class="product-card" id="planner">
             <div class="product-top">
-              <span class="product-pill">Finance & Wealth</span>
-              <span class="product-symbol">%</span>
+              <span class="product-pill" data-i18n="pill.finance">Finance & Wealth</span>
+              <span class="product-badge" data-i18n="badge.live">Live</span>
             </div>
-            <h3>EISAX Planner</h3>
+            <h3 data-i18n="p.planner.title">EISAX Planner</h3>
             <p class="product-sub" data-i18n="p.planner.sub">Lending Intelligence</p>
             <p data-i18n="p.planner.desc">Affordability, commitment and scenario tools built to support smarter borrowing decisions.</p>
             <ul>
@@ -211,26 +262,28 @@
             <a href="https://planner.eisax.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.visit">Visit product →</a>
           </article>
 
+          <!-- 4. SaveBuddy AI -->
           <article class="product-card" id="savebuddy">
             <div class="product-top">
-              <span class="product-pill">Finance & Wealth</span>
-              <span class="product-symbol">♡</span>
+              <span class="product-pill" data-i18n="pill.finance">Finance & Wealth</span>
+              <span class="product-badge" data-i18n="badge.sandbox">Live Sandbox</span>
             </div>
-            <h3>SaveBuddy AI</h3>
-            <p class="product-sub" data-i18n="p.save.sub">Financial Wellness</p>
-            <p data-i18n="p.save.desc">Financial health scoring, simulations and personalized nudges for better money habits.</p>
+            <h3 data-i18n="p.save.title">SaveBuddy AI</h3>
+            <p class="product-sub" data-i18n="p.save.sub">Financial Wellness & Micro-Savings</p>
+            <p data-i18n="p.save.desc">Financial health scoring, gamified micro-savings simulations and personalized nudges for better money habits.</p>
             <ul>
               <li data-i18n="p.save.f1">Financial health score</li>
               <li data-i18n="p.save.f2">Smart simulations</li>
               <li data-i18n="p.save.f3">Personalized wellness insights</li>
             </ul>
-            <a href="#company" class="text-link" data-i18n="common.learn">Learn more →</a>
+            <a href="https://savebuddy.eisax.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.visit">Visit product →</a>
           </article>
 
+          <!-- 5. Digital Assets -->
           <article class="product-card" id="digital">
             <div class="product-top">
-              <span class="product-pill">Finance & Wealth</span>
-              <span class="product-symbol">◇</span>
+              <span class="product-pill" data-i18n="pill.finance">Finance & Wealth</span>
+              <span class="product-badge badge-lab" data-i18n="badge.lab">In Lab</span>
             </div>
             <h3 data-i18n="p.digital.title">Digital Assets & Tokenization</h3>
             <p class="product-sub" data-i18n="p.digital.sub">Future Financial Infrastructure</p>
@@ -240,15 +293,16 @@
               <li data-i18n="p.digital.f2">Digital-asset operating infrastructure</li>
               <li data-i18n="p.digital.f3">Secure, controlled architecture</li>
             </ul>
-            <a href="#innovation" class="text-link" data-i18n="common.learn">Learn more →</a>
+            <a href="#company" class="text-link" data-i18n="common.learn">Learn more →</a>
           </article>
 
+          <!-- 6. Brevoya -->
           <article class="product-card" id="brevoya">
             <div class="product-top">
-              <span class="product-pill">Communication</span>
-              <span class="product-badge">New</span>
+              <span class="product-pill" data-i18n="pill.comm">Communication</span>
+              <span class="product-badge" data-i18n="badge.live">Live</span>
             </div>
-            <h3>Brevoya</h3>
+            <h3 data-i18n="p.brevoya.title">Brevoya</h3>
             <p class="product-sub" data-i18n="p.brevoya.sub">Multilingual Communication</p>
             <p data-i18n="p.brevoya.desc">Real-time multilingual communication across chat, voice, calls and media.</p>
             <ul>
@@ -259,12 +313,13 @@
             <a href="https://brevoya.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.visit">Visit product →</a>
           </article>
 
+          <!-- 7. E-Quiz -->
           <article class="product-card" id="equiz">
             <div class="product-top">
-              <span class="product-pill">Education</span>
-              <span class="product-badge">New</span>
+              <span class="product-pill" data-i18n="pill.edu">Education</span>
+              <span class="product-badge" data-i18n="badge.live">Live</span>
             </div>
-            <h3>E-Quiz</h3>
+            <h3 data-i18n="p.quiz.title">E-Quiz</h3>
             <p class="product-sub" data-i18n="p.quiz.sub">Smart Education Engagement</p>
             <p data-i18n="p.quiz.desc">AI-assisted quiz creation, instant sharing and classroom insights for teachers.</p>
             <ul>
@@ -275,10 +330,11 @@
             <a href="https://quiz.eisax.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.visit">Visit product →</a>
           </article>
 
+          <!-- 8. Innovation Lab -->
           <article class="product-card" id="innovation">
             <div class="product-top">
-              <span class="product-pill">Ventures</span>
-              <span class="product-symbol">✦</span>
+              <span class="product-pill" data-i18n="pill.ventures">Ventures</span>
+              <span class="product-badge badge-lab" data-i18n="badge.ventures">Ventures</span>
             </div>
             <h3 data-i18n="p.lab.title">EISAX Innovation Lab</h3>
             <p class="product-sub" data-i18n="p.lab.sub">New Ventures & Emerging Technology</p>
@@ -288,12 +344,13 @@
               <li data-i18n="p.lab.f2">Blockchain & Web3</li>
               <li data-i18n="p.lab.f3">Fintech and adjacent technologies</li>
             </ul>
-            <a href="#company" class="text-link" data-i18n="common.learn">Learn more →</a>
+            <a href="#company" class="text-link" data-i18n="common.exploreVentures">Explore Ventures →</a>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- Why EISAX Section -->
     <section class="section shell" id="solutions">
       <div class="statement-card">
         <div>
@@ -309,6 +366,7 @@
       </div>
     </section>
 
+    <!-- About Company Section -->
     <section class="section section-soft" id="company">
       <div class="shell company-grid">
         <div>
@@ -318,22 +376,28 @@
         <div class="company-copy">
           <p data-i18n="company.p1">EISAX is a UAE-built technology ecosystem focused on creating intelligent products that solve real operational and decision-making problems.</p>
           <p data-i18n="company.p2">We combine financial domain expertise, artificial intelligence, product design and practical automation to build solutions that are useful in the real world.</p>
+          <div class="company-badges">
+            <span class="region-badge" data-i18n="company.region">🇦🇪 Built in the United Arab Emirates</span>
+            <span class="region-badge" data-i18n="company.scope">Global Financial Standards</span>
+          </div>
           <a class="btn btn-primary" href="mailto:hello@eisax.com" data-i18n="company.cta">Talk to EISAX</a>
         </div>
       </div>
     </section>
 
+    <!-- Final CTA Section -->
     <section class="section shell final-cta">
       <div class="final-card">
         <div class="final-orb"></div>
         <div class="section-kicker" data-i18n="final.kicker">THE NEXT CHAPTER</div>
         <h2 data-i18n="final.title">Different solutions. One ecosystem. Maximum impact.</h2>
         <p data-i18n="final.desc">We are building the next generation of useful, connected technology products from the UAE to the world.</p>
-        <a class="btn btn-light" href="mailto:hello@eisax.com" data-i18n="final.cta">Build with us</a>
+        <a class="btn btn-light" href="mailto:partnerships@eisax.com" data-i18n="final.cta">Build with us</a>
       </div>
     </section>
   </main>
 
+  <!-- Site Footer -->
   <footer class="footer">
     <div class="shell footer-grid">
       <div>
@@ -343,10 +407,14 @@
       <div class="footer-links">
         <a href="#ecosystem" data-i18n="nav.ecosystem">Ecosystem</a>
         <a href="#products" data-i18n="nav.products">Products</a>
+        <a href="#solutions" data-i18n="nav.solutions">Solutions</a>
         <a href="#company" data-i18n="nav.company">Company</a>
         <a href="mailto:hello@eisax.com">hello@eisax.com</a>
+        <a href="mailto:partnerships@eisax.com">partnerships@eisax.com</a>
       </div>
-      <div class="footer-meta">© <span id="year"></span> EISAX</div>
+      <div class="footer-meta">
+        <div>© <span id="year"></span> EISAX FZ-LLC. <span data-i18n="footer.rights">All rights reserved.</span></div>
+      </div>
     </div>
   </footer>
 </body>

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Not Found — EISAX | الصفحة غير موجودة</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700;800&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <style>
+    .not-found-wrap {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+    .error-code {
+      font-size: clamp(5rem, 15vw, 10rem);
+      font-weight: 900;
+      line-height: 1;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin: 0;
+    }
+    .error-lead {
+      color: var(--muted);
+      font-size: 1.15rem;
+      max-width: 540px;
+      margin: 16px auto 32px;
+      line-height: 1.6;
+    }
+    .cta-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  </style>
+  <script>
+    const theme = localStorage.getItem("eisax-theme") || "dark";
+    document.documentElement.dataset.theme = theme;
+  </script>
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="/" aria-label="EISAX home">
+        <span class="brand-mark">E</span>
+        <span class="brand-word">EISAX</span>
+      </a>
+      <a class="btn btn-small btn-primary" href="/">Home | الرئيسية</a>
+    </div>
+  </header>
+
+  <main class="not-found-wrap">
+    <h1 class="error-code">404</h1>
+    <h2>Page not found — الصفحة غير موجودة</h2>
+    <p class="error-lead">
+      The requested page does not exist or has moved.<br>
+      الصفحة التي تبحث عنها غير موجودة أو تم نقلها ضمن المنظومة.
+    </p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="/">Return to Homepage →</a>
+      <a class="btn btn-ghost" href="/#products">Explore Products</a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="shell" style="text-align: center; color: var(--muted); font-size: 0.85rem;">
+      © EISAX FZ-LLC. All rights reserved.
+    </div>
+  </footer>
+</body>
+</html>
