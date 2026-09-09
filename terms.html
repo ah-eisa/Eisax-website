@@ -25,7 +25,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/styles.css">
   <script>
-    const theme = localStorage.getItem("eisax-theme") || "dark";
+    let theme = "dark";
+    try {
+      theme = localStorage.getItem("eisax-theme") || "dark";
+    } catch (_) {}
     document.documentElement.dataset.theme = theme;
   </script>
 </head>
@@ -138,7 +141,9 @@
     themeBtn?.addEventListener("click", () => {
       const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
       document.documentElement.dataset.theme = next;
-      localStorage.setItem("eisax-theme", next);
+      try {
+        localStorage.setItem("eisax-theme", next);
+      } catch (_) {}
       updateThemeIcon();
     });
   </script>

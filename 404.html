@@ -52,7 +52,10 @@
     }
   </style>
   <script>
-    const theme = localStorage.getItem("eisax-theme") || "dark";
+    let theme = "dark";
+    try {
+      theme = localStorage.getItem("eisax-theme") || "dark";
+    } catch (_) {}
     document.documentElement.dataset.theme = theme;
   </script>
 </head>

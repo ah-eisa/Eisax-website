@@ -159,7 +159,7 @@ const i18n = {
     "company.p1": "EISAX is a UAE-built technology ecosystem focused on creating intelligent products that solve real operational and decision-making problems.",
     "company.p2": "We combine financial domain expertise, artificial intelligence, product design and practical automation to build solutions that are useful in the real world.",
     "company.region": "🇦🇪 Built in the United Arab Emirates",
-    "company.scope": "Global Financial Standards",
+    "company.scope": "Built for Global Markets",
     "company.cta": "Talk to EISAX",
 
     // Final CTA & Footer
@@ -334,7 +334,7 @@ const i18n = {
     "company.p1": "EISAX منظومة تقنية متكاملة تُبنى في دولة الإمارات العربية المتحدة، وتركز على ابتكار منتجات ذكية تحل مشكلات تشغيلية واتخاذ القرار في العالم الحقيقي.",
     "company.p2": "نجمع بين الخبرة العميقة في أسواق المال، والذكاء الاصطناعي، وتصميم المنتجات، والأتمتة العملية لبناء حلول قابلة للتطبيق وذات قيمة ملموسة.",
     "company.region": "🇦🇪 صُنع في دولة الإمارات العربية المتحدة",
-    "company.scope": "بمعايير الأسواق المالية العالمية",
+    "company.scope": "مصممة للأسواق العالمية",
     "company.cta": "تواصل مع فريق EISAX",
 
     // Final CTA & Footer
@@ -350,6 +350,26 @@ const i18n = {
   }
 };
 
+// Fail-safe Storage Helper
+const storage = {
+  get(key, fallback = null) {
+    try {
+      if (typeof window !== "undefined" && window.localStorage) {
+        const val = window.localStorage.getItem(key);
+        return val !== null ? val : fallback;
+      }
+    } catch (_) {}
+    return fallback;
+  },
+  set(key, val) {
+    try {
+      if (typeof window !== "undefined" && window.localStorage) {
+        window.localStorage.setItem(key, val);
+      }
+    } catch (_) {}
+  }
+};
+
 // State handling
 const isArRoute = window.location.pathname.startsWith("/ar");
 const urlParams = new URLSearchParams(window.location.search);
@@ -360,12 +380,12 @@ if (isArRoute) {
   lang = "ar";
 } else if (queryLang === "ar" || queryLang === "en") {
   lang = queryLang;
-  localStorage.setItem("eisax-lang", lang);
+  storage.set("eisax-lang", lang);
 } else {
-  lang = localStorage.getItem("eisax-lang") || "en";
+  lang = storage.get("eisax-lang", "en");
 }
 
-let theme = localStorage.getItem("eisax-theme") || "dark";
+let theme = storage.get("eisax-theme", "dark");
 
 function applyLanguage() {
   document.documentElement.lang = lang;
@@ -408,17 +428,17 @@ function applyTheme() {
 
 function toggleLanguage() {
   if (isArRoute) {
-    localStorage.setItem("eisax-lang", "en");
+    storage.set("eisax-lang", "en");
     window.location.href = "/" + (window.location.hash || "");
     return;
   }
-  localStorage.setItem("eisax-lang", "ar");
+  storage.set("eisax-lang", "ar");
   window.location.href = "/ar/" + (window.location.hash || "");
 }
 
 function toggleTheme() {
   theme = theme === "dark" ? "light" : "dark";
-  localStorage.setItem("eisax-theme", theme);
+  storage.set("eisax-theme", theme);
   applyTheme();
 }
 
