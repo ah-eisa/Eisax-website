@@ -13,6 +13,8 @@
   <meta name="twitter:title" content="EISAX | Intelligent Ecosystems">
   <meta name="twitter:description" content="One vision. Multiple intelligent solutions. Infinite possibilities.">
   <link rel="canonical" href="https://eisax.com/">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -26,9 +28,9 @@
   <!-- Sticky Site Header -->
   <header class="site-header">
     <div class="shell nav-wrap">
-      <a class="brand" href="#top" aria-label="EISAX home">
-        <span class="brand-mark">E</span>
-        <span class="brand-word">EISAX</span>
+      <a class="brand" href="#top" aria-label="EisaX Home">
+        <img src="/assets/logo-mark.webp" alt="EisaX Logo" class="brand-logo-img" width="36" height="36">
+        <span class="brand-word">EisaX</span>
       </a>
 
       <nav class="desktop-nav" aria-label="Primary">
@@ -57,8 +59,8 @@
   <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
     <div class="drawer-header">
       <div class="brand">
-        <span class="brand-mark">E</span>
-        <span class="brand-word">EISAX</span>
+        <img src="/assets/logo-mark.webp" alt="EisaX Logo" class="brand-logo-img" width="34" height="34">
+        <span class="brand-word">EisaX</span>
       </div>
       <button class="icon-btn close-drawer" id="closeDrawer" type="button" aria-label="Close menu">✕</button>
     </div>
@@ -102,36 +104,51 @@
         </div>
       </div>
 
-      <div class="hero-visual" aria-label="EISAX ecosystem illustration">
+      <div class="hero-visual" aria-label="EisaX ecosystem interactive map">
         <div class="ecosystem-stage">
+          <div class="orbit-glow"></div>
           <div class="orbit orbit-one"></div>
           <div class="orbit orbit-two"></div>
-          <div class="hub">
-            <div class="hub-logo">E</div>
-            <div class="hub-title">EISAX</div>
-            <div class="hub-sub" data-i18n="hero.hub">Intelligent Ecosystems</div>
+          <div class="orbit-pulse"></div>
+
+          <!-- Central EisaX Hub -->
+          <div class="hub" id="ecosystemHub">
+            <div class="hub-radar"></div>
+            <div class="hub-core">
+              <img src="/assets/logo-mark.webp" alt="EisaX Official Logo" class="hub-logo-img" width="56" height="56">
+              <div class="hub-title">EisaX</div>
+              <div class="hub-sub" data-i18n="hero.hub">Intelligent Ecosystems</div>
+            </div>
           </div>
 
-          <button class="node node-1" data-target="investment">
-            <span class="node-icon">◈</span><span data-i18n="node.investment">Investment</span>
+          <!-- Symmetrical Satellite Project Nodes -->
+          <button class="node node-1" data-target="investment" type="button" aria-label="EISAX Agent">
+            <span class="node-icon">◈</span>
+            <span class="node-label" data-i18n="node.investment">EISAX Agent</span>
           </button>
-          <button class="node node-2" data-target="wealthgate">
-            <span class="node-icon">▣</span><span data-i18n="node.wealth">Wealth</span>
+          <button class="node node-2" data-target="wealthgate" type="button" aria-label="WealthGate AI">
+            <span class="node-icon">▣</span>
+            <span class="node-label" data-i18n="node.wealth">WealthGate AI</span>
           </button>
-          <button class="node node-3" data-target="planner">
-            <span class="node-icon">%</span><span data-i18n="node.lending">Lending</span>
+          <button class="node node-3" data-target="savebuddy" type="button" aria-label="SaveBuddy AI">
+            <span class="node-icon">♡</span>
+            <span class="node-label" data-i18n="node.savings">SaveBuddy AI</span>
           </button>
-          <button class="node node-4" data-target="savebuddy">
-            <span class="node-icon">♡</span><span data-i18n="node.savings">Savings</span>
+          <button class="node node-4" data-target="planner" type="button" aria-label="EISAX Planner">
+            <span class="node-icon">%</span>
+            <span class="node-label" data-i18n="node.lending">EISAX Planner</span>
           </button>
-          <button class="node node-5" data-target="brevoya">
-            <span class="node-icon">文</span><span data-i18n="node.connect">Connect</span>
+          <button class="node node-5" data-target="brevoya" type="button" aria-label="Brevoya">
+            <span class="node-icon">文</span>
+            <span class="node-label" data-i18n="node.connect">Brevoya</span>
           </button>
-          <button class="node node-6" data-target="equiz">
-            <span class="node-icon">✓</span><span data-i18n="node.learn">Learn</span>
+          <button class="node node-6" data-target="equiz" type="button" aria-label="E-Quiz">
+            <span class="node-icon">✓</span>
+            <span class="node-label" data-i18n="node.learn">E-Quiz</span>
           </button>
-          <button class="node node-7" data-target="digital">
-            <span class="node-icon">◇</span><span data-i18n="node.digital">Digital</span>
+          <button class="node node-7" data-target="digital" type="button" aria-label="Digital Assets">
+            <span class="node-icon">◇</span>
+            <span class="node-label" data-i18n="node.digital">Digital Assets</span>
           </button>
         </div>
       </div>
@@ -388,11 +405,19 @@
     <!-- Final CTA Section -->
     <section class="section shell final-cta">
       <div class="final-card">
-        <div class="final-orb"></div>
-        <div class="section-kicker" data-i18n="final.kicker">THE NEXT CHAPTER</div>
-        <h2 data-i18n="final.title">Different solutions. One ecosystem. Maximum impact.</h2>
-        <p data-i18n="final.desc">We are building the next generation of useful, connected technology products from the UAE to the world.</p>
-        <a class="btn btn-light" href="mailto:partnerships@eisax.com" data-i18n="final.cta">Build with us</a>
+        <div class="final-mesh"></div>
+        <div class="final-glow-a"></div>
+        <div class="final-glow-b"></div>
+        <img src="/assets/logo-mark.webp" alt="" class="final-watermark" aria-hidden="true">
+        <div class="final-content">
+          <div class="section-kicker" data-i18n="final.kicker">THE NEXT CHAPTER</div>
+          <h2 data-i18n="final.title">Different solutions. One ecosystem. Maximum impact.</h2>
+          <p data-i18n="final.desc">We are building the next generation of useful, connected technology products from the UAE to the world.</p>
+          <div class="final-actions">
+            <a class="btn btn-primary btn-glow" href="mailto:partnerships@eisax.com" data-i18n="final.cta">Build with us</a>
+            <a class="btn btn-ghost" href="#products" data-i18n="nav.explore">Explore Products</a>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -401,7 +426,10 @@
   <footer class="footer">
     <div class="shell footer-grid">
       <div>
-        <div class="brand footer-brand"><span class="brand-mark">E</span><span class="brand-word">EISAX</span></div>
+        <div class="brand footer-brand">
+          <img src="/assets/logo-mark.webp" alt="EisaX Logo" class="brand-logo-img" width="32" height="32">
+          <span class="brand-word">EisaX</span>
+        </div>
         <p data-i18n="footer.tag">Building Intelligent Ecosystems for a Smarter Tomorrow.</p>
       </div>
       <div class="footer-links">

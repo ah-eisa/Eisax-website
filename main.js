@@ -24,14 +24,14 @@ const i18n = {
     "hero.proof3": "Infinite Possibilities.",
     "hero.hub": "Intelligent Ecosystems",
 
-    // Orbit Nodes
-    "node.investment": "Investment",
-    "node.wealth": "Wealth",
-    "node.lending": "Lending",
-    "node.savings": "Savings",
-    "node.connect": "Connect",
-    "node.learn": "Learn",
-    "node.digital": "Digital",
+    // Orbit Nodes (Project Names)
+    "node.investment": "EISAX Agent",
+    "node.wealth": "WealthGate AI",
+    "node.lending": "EISAX Planner",
+    "node.savings": "SaveBuddy AI",
+    "node.connect": "Brevoya",
+    "node.learn": "E-Quiz",
+    "node.digital": "Digital Assets",
 
     // Trust Strip
     "trust.title": "Built around five core principles",
@@ -196,13 +196,13 @@ const i18n = {
     "hero.proof3": "إمكانات بلا حدود.",
     "hero.hub": "منظومات ذكية",
 
-    // Orbit Nodes
-    "node.investment": "الاستثمار",
-    "node.wealth": "الثروات",
-    "node.lending": "الإقراض",
-    "node.savings": "الادخار",
-    "node.connect": "الاتصال",
-    "node.learn": "التعليم",
+    // Orbit Nodes (Project Names)
+    "node.investment": "إيساكس إيجنت",
+    "node.wealth": "ويلث جيت AI",
+    "node.lending": "إيساكس بلانر",
+    "node.savings": "سيف بدي AI",
+    "node.connect": "بريفويا",
+    "node.learn": "إي-كويز",
     "node.digital": "الأصول الرقمية",
 
     // Trust Strip
@@ -478,6 +478,11 @@ document.querySelectorAll(".node").forEach(node => {
       }
     }
   });
+});
+
+// Central Hub click scrolls to products
+document.getElementById("ecosystemHub")?.addEventListener("click", () => {
+  document.getElementById("products")?.scrollIntoView({ behavior: "smooth" });
 });
 
 // Set current year
