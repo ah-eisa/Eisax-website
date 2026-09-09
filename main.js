@@ -38,7 +38,7 @@ const i18n = {
     "trust.i1": "AI-Powered",
     "trust.i2": "Secure",
     "trust.i3": "Smart",
-    "trust.i4": "Compliant",
+    "trust.i4": "Governed",
     "trust.i5": "Global",
 
     // Ecosystem Pillars
@@ -213,7 +213,7 @@ const i18n = {
     "trust.i1": "مدعوم بالذكاء الاصطناعي",
     "trust.i2": "أمان مؤسسي",
     "trust.i3": "تشغيل ذكي",
-    "trust.i4": "حوكمة وامتثال",
+    "trust.i4": "حوكمة مسؤولة",
     "trust.i5": "معايير عالمية",
 
     // Ecosystem Pillars
@@ -351,7 +351,20 @@ const i18n = {
 };
 
 // State handling
-let lang = localStorage.getItem("eisax-lang") || "en";
+const isArRoute = window.location.pathname.startsWith("/ar");
+const urlParams = new URLSearchParams(window.location.search);
+const queryLang = urlParams.get("lang");
+
+let lang = "en";
+if (isArRoute) {
+  lang = "ar";
+} else if (queryLang === "ar" || queryLang === "en") {
+  lang = queryLang;
+  localStorage.setItem("eisax-lang", lang);
+} else {
+  lang = localStorage.getItem("eisax-lang") || "en";
+}
+
 let theme = localStorage.getItem("eisax-theme") || "dark";
 
 function applyLanguage() {
@@ -394,9 +407,13 @@ function applyTheme() {
 }
 
 function toggleLanguage() {
-  lang = lang === "en" ? "ar" : "en";
-  localStorage.setItem("eisax-lang", lang);
-  applyLanguage();
+  if (isArRoute) {
+    localStorage.setItem("eisax-lang", "en");
+    window.location.href = "/" + (window.location.hash || "");
+    return;
+  }
+  localStorage.setItem("eisax-lang", "ar");
+  window.location.href = "/ar/" + (window.location.hash || "");
 }
 
 function toggleTheme() {

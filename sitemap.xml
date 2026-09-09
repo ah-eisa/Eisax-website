@@ -7,6 +7,12 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://eisax.com/ar/</loc>
+    <lastmod>2026-09-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://eisax.com/privacy</loc>
     <lastmod>2026-09-09</lastmod>
     <changefreq>monthly</changefreq>

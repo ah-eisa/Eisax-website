@@ -1,3 +1,24 @@
+# Named Products — Live Tools & App Cards
+/eisax-planner    https://planner.eisax.com  301
+/eisax-planner/   https://planner.eisax.com  301
+/eisax-agent      /#investment               301
+/eisax-agent/     /#investment               301
+/wealthgate-ai    /#wealthgate               301
+/wealthgate-ai/   /#wealthgate               301
+
+# Sections & Anchors
+/products         /#products                 301
+/products/        /#products                 301
+/platform         /#ecosystem                301
+/platform/        /#ecosystem                301
+/solutions        /#solutions                301
+/solutions/       /#solutions                301
+/partnerships     /#partnerships             301
+/partnerships/    /#partnerships             301
+
+# Legacy Arabic Products
+/ar-products      /ar/#products              302
+/ar-products/     /ar/#products              302
 
 # Legacy Portfolio & Blog 301 Redirects
 /insights     /                  301

@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EISAX | منظومة ذكية متكاملة</title>
+  <meta name="description" content="تبني EISAX حلولاً مدعومة بالذكاء الاصطناعي عبر ذكاء الاستثمار، البنية التحتية لإدارة الثروات، الإقراض، الأصول الرقمية، الاتصال، والتعليم.">
+  <meta property="og:title" content="EisaX | منظومة ذكية متكاملة">
+  <meta property="og:description" content="رؤية واحدة. حلول ذكية متعددة. إمكانيات بلا حدود.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eisax.com/ar/">
+  <meta property="og:site_name" content="EisaX">
+  <meta property="og:locale" content="ar_AE">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta property="og:image" content="https://eisax.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="EisaX — المنظومات الذكية">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EisaX | منظومة ذكية متكاملة">
+  <meta name="twitter:description" content="رؤية واحدة. حلول ذكية متعددة. إمكانيات بلا حدود.">
+  <meta name="twitter:image" content="https://eisax.com/assets/og-image.png">
+  <meta name="twitter:image:alt" content="EisaX — المنظومات الذكية">
+  <link rel="canonical" href="https://eisax.com/ar/">
+  <link rel="alternate" hreflang="en" href="https://eisax.com/">
+  <link rel="alternate" hreflang="ar" href="https://eisax.com/ar/">
+  <link rel="alternate" hreflang="x-default" href="https://eisax.com/">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/main.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <!-- Sticky Site Header -->
+  <header class="site-header">
+    <div class="shell nav-wrap">
+      <a class="brand" href="#top" aria-label="EisaX Home">
+        <img src="/assets/logo-mark.webp" alt="EisaX Logo" class="brand-logo-img" width="36" height="36">
+        <span class="brand-word">EisaX</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary">
+        <a href="#ecosystem" data-i18n="nav.ecosystem">المنظومة</a>
+        <a href="#products" data-i18n="nav.products">المنتجات</a>
+        <a href="#solutions" data-i18n="nav.solutions">الحلول</a>
+        <a href="#innovation" data-i18n="nav.innovation">الابتكار</a>
+        <a href="#company" data-i18n="nav.company">عن EISAX</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">◐</button>
+        <button class="lang-btn" id="langToggle" type="button">EN</button>
+        <a class="btn btn-small btn-primary desktop-cta" href="#products" data-i18n="nav.explore">استكشف المنتجات</a>
+        <button class="icon-btn mobile-toggle" id="mobileToggle" type="button" aria-label="Toggle menu" aria-expanded="false">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <div class="brand">
+        <img src="/assets/logo-mark.webp" alt="EisaX Logo" class="brand-logo-img" width="34" height="34">
+        <span class="brand-word">EisaX</span>
+      </div>
+      <button class="icon-btn close-drawer" id="closeDrawer" type="button" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="#ecosystem" class="mobile-nav-link" data-i18n="nav.ecosystem">المنظومة</a>
+      <a href="#products" class="mobile-nav-link" data-i18n="nav.products">المنتجات</a>
+      <a href="#solutions" class="mobile-nav-link" data-i18n="nav.solutions">الحلول</a>
+      <a href="#innovation" class="mobile-nav-link" data-i18n="nav.innovation">الابتكار</a>
+      <a href="#company" class="mobile-nav-link" data-i18n="nav.company">عن EISAX</a>
+    </nav>
+    <div class="drawer-footer">
+      <div class="drawer-controls">
+        <button class="lang-btn" id="langToggleMobile" type="button">EN</button>
+        <button class="icon-btn" id="themeToggleMobile" type="button" aria-label="Toggle theme">◐</button>
+      </div>
+      <a class="btn btn-primary btn-block" href="#products" id="mobileExploreBtn" data-i18n="nav.explore">استكشف المنتجات</a>
+    </div>
+  </aside>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero shell">
+      <div class="hero-copy">
+        <div class="eyebrow" data-i18n="hero.eyebrow">منتجات مدعومة بالذكاء الاصطناعي، تُبنى في الإمارات لعالم مترابط</div>
+        <h1>
+          <span data-i18n="hero.line1">نبني منظومات</span>
+          <span class="gradient-text" data-i18n="hero.line2">ذكية</span>
+          <span data-i18n="hero.line3">لغدٍ أكثر ذكاءً.</span>
+        </h1>
+        <p class="hero-lead" data-i18n="hero.lead">تجمع EISAX منتجات ذكية في الاستثمار وإدارة الثروات والإقراض والأصول الرقمية والاتصالات والتعليم.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#products" data-i18n="hero.cta1">استكشف منظومة EISAX</a>
+          <a class="btn btn-ghost" href="#company" data-i18n="hero.cta2">اكتشف EISAX</a>
+        </div>
+        <div class="hero-proof">
+          <span data-i18n="hero.proof1">رؤية واحدة.</span>
+          <span data-i18n="hero.proof2">حلول متعددة.</span>
+          <span class="accent" data-i18n="hero.proof3">إمكانات بلا حدود.</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="EisaX ecosystem interactive map">
+        <div class="ecosystem-stage">
+          <div class="orbit-glow"></div>
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="orbit-pulse"></div>
+
+          <!-- Central EisaX Hub -->
+          <div class="hub" id="ecosystemHub">
+            <div class="hub-radar"></div>
+            <div class="hub-core">
+              <img src="/assets/logo-mark.webp" alt="EisaX Official Logo" class="hub-logo-img" width="56" height="56">
+              <div class="hub-title">EisaX</div>
+              <div class="hub-sub" data-i18n="hero.hub">منظومات ذكية</div>
+            </div>
+          </div>
+
+          <!-- Symmetrical Satellite Project Nodes -->
+          <button class="node node-1" data-target="investment" type="button" aria-label="EISAX Agent">
+            <span class="node-icon">◈</span>
+            <span class="node-label" data-i18n="node.investment">إيساكس إيجنت</span>
+          </button>
+          <button class="node node-2" data-target="wealthgate" type="button" aria-label="WealthGate AI">
+            <span class="node-icon">▣</span>
+            <span class="node-label" data-i18n="node.wealth">ويلث جيت AI</span>
+          </button>
+          <button class="node node-3" data-target="savebuddy" type="button" aria-label="SaveBuddy AI">
+            <span class="node-icon">♡</span>
+            <span class="node-label" data-i18n="node.savings">سيف بدي AI</span>
+          </button>
+          <button class="node node-4" data-target="planner" type="button" aria-label="EISAX Planner">
+            <span class="node-icon">%</span>
+            <span class="node-label" data-i18n="node.lending">إيساكس بلانر</span>
+          </button>
+          <button class="node node-5" data-target="brevoya" type="button" aria-label="Brevoya">
+            <span class="node-icon">文</span>
+            <span class="node-label" data-i18n="node.connect">بريفويا</span>
+          </button>
+          <button class="node node-6" data-target="equiz" type="button" aria-label="E-Quiz">
+            <span class="node-icon">✓</span>
+            <span class="node-label" data-i18n="node.learn">إي-كويز</span>
+          </button>
+          <button class="node node-7" data-target="digital" type="button" aria-label="Digital Assets">
+            <span class="node-icon">◇</span>
+            <span class="node-label" data-i18n="node.digital">الأصول الرقمية</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="trust-strip">
+      <div class="shell trust-inner">
+        <span data-i18n="trust.title">نبني منظومتنا حول خمسة مبادئ جوهرية</span>
+        <div class="trust-items">
+          <span data-i18n="trust.i1">مدعوم بالذكاء الاصطناعي</span>
+          <span data-i18n="trust.i2">أمان مؤسسي</span>
+          <span data-i18n="trust.i3">تشغيل ذكي</span>
+          <span data-i18n="trust.i4">حوكمة مسؤولة</span>
+          <span data-i18n="trust.i5">معايير عالمية</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ecosystem Pillars -->
+    <section class="section shell" id="ecosystem">
+      <div class="section-head centered">
+        <div class="section-kicker" data-i18n="eco.kicker">منظومة EISAX</div>
+        <h2 data-i18n="eco.title">حلول مختلفة. منظومة ذكية واحدة.</h2>
+        <p data-i18n="eco.lead">كل منتج يحل مشكلة تشغيلية واضحة، وتتكامل المنتجات معاً لتبسيط الأعمال المعقدة وتسريعها وجعلها أكثر فائدة وموثوقية.</p>
+      </div>
+
+      <div class="worlds-grid">
+        <article class="world-card world-finance">
+          <div class="world-icon">◈</div>
+          <h3 data-i18n="world.finance.title">المال وإدارة الثروات</h3>
+          <p data-i18n="world.finance.desc">ذكاء استثماري، بنية رقمية لإدارة الثروات، أدوات إقراض وحلول عافية مالية.</p>
+          <div class="world-tags">
+            <span data-i18n="tag.invest">الذكاء الاستثماري</span>
+            <span data-i18n="tag.wealth">WealthGate AI</span>
+            <span data-i18n="tag.planner">Planner</span>
+            <span data-i18n="tag.savebuddy">SaveBuddy AI</span>
+            <span data-i18n="tag.digital">الأصول الرقمية</span>
+          </div>
+        </article>
+
+        <article class="world-card world-communication">
+          <div class="world-icon">◎</div>
+          <h3 data-i18n="world.communication.title">الاتصالات</h3>
+          <p data-i18n="world.communication.desc">اتصال فوري متعدد اللغات يزيل الحواجز اللغوية بالصوت والصورة والنص.</p>
+          <div class="world-tags"><span data-i18n="tag.brevoya">Brevoya</span></div>
+        </article>
+
+        <article class="world-card world-education">
+          <div class="world-icon">✓</div>
+          <h3 data-i18n="world.education.title">التعليم</h3>
+          <p data-i18n="world.education.desc">أدوات ذكية تفاعلية لدعم المعلمين والطلاب وتعزيز المشاركة الصفية.</p>
+          <div class="world-tags"><span data-i18n="tag.equiz">E-Quiz</span></div>
+        </article>
+
+        <article class="world-card world-innovation">
+          <div class="world-icon">✦</div>
+          <h3 data-i18n="world.innovation.title">المشاريع والابتكار</h3>
+          <p data-i18n="world.innovation.desc">مختبر لاختبار أحدث التقنيات وتطوير مشاريع ومنتجات EISAX المستقبلية.</p>
+          <div class="world-tags"><span data-i18n="tag.lab">مختبر الابتكار</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="section section-soft" id="products">
+      <div class="shell">
+        <div class="section-head split">
+          <div>
+            <div class="section-kicker" data-i18n="products.kicker">المنتجات</div>
+            <h2 data-i18n="products.title">ثمانية حلول متخصصة. علامة تجارية واحدة.</h2>
+          </div>
+          <p data-i18n="products.lead">استكشف المنتجات المبتكرة التي تقود منظومة EISAX اليوم.</p>
+        </div>
+
+        <div class="products-grid">
+          <!-- 1. Investment Intelligence -->
+          <article class="product-card featured" id="investment">
+            <div class="product-top">
+              <span class="product-pill" data-i18n="pill.finance">المال والثروات</span>
+              <span class="product-badge badge-flagship" data-i18n="badge.flagship">المنتج الأبرز</span>
+            </div>
+            <h3 data-i18n="p.invest.title">EISAX Investment Intelligence</h3>
+            <p class="product-sub" data-i18n="p.invest.sub">أبحاث استثمارية وذكاء محافظ مدعومان بالذكاء الاصطناعي</p>
+            <p data-i18n="p.invest.desc">تحليلات مؤسسية للأصول والمحافظ والمخاطر والأداء والتحسين والاقتصاد الكلي واختبارات الضغط.</p>
+            <ul>
+              <li data-i18n="p.invest.f1">تحليل معمق للأصول الفردية والتقييم العادل</li>
+              <li data-i18n="p.invest.f2">تحليلات متقدمة للمحافظ وتحسين العوائد</li>
+              <li data-i18n="p.invest.f3">إسناد المخاطر واختبارات الضغط المالي</li>
+              <li data-i18n="p.invest.f4">EISAX Agent: مساعدك الذكي للأبحاث والتحليل المالي</li>
+            </ul>
+            <a href="https://agent.eisax.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.launchAgent">تشغيل EISAX Agent ←</a>
+          </article>
+
+          <!-- 2. WealthGate AI -->
+          <article class="product-card" id="wealthgate">
+            <div class="product-top">
+              <span class="product-pill" data-i18n="pill.finance">المال والثروات</span>
+              <span class="product-badge" data-i18n="badge.flagship">المنتج الأبرز</span>
+            </div>
+            <h3 data-i18n="p.wealth.title">WealthGate AI</h3>
+            <p class="product-sub" data-i18n="p.wealth.sub">بنية رقمية لإدارة الثروات</p>
+            <p data-i18n="p.wealth.desc">بوابة موحدة للعملاء والعمليات مصممة لمديري الثروات والمؤسسات المالية والشركات العائلية.</p>
+            <ul>
+              <li data-i18n="p.wealth.f1">بوابة متكاملة لضم العملاء وخدمتهم ذاتياً</li>
+              <li data-i18n="p.wealth.f2">أتمتة شاملة لسير عمل إدارة المحافظ</li>
+              <li data-i18n="p.wealth.f3">تقارير مؤسسية متقدمة وضوابط امتثال صارمة</li>
+            </ul>
+            <a href="https://wealthgateai.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.visit">زيارة المنصة ←</a>
+          </article>
+
+          <!-- 3. EISAX Planner -->
+          <article class="product-card" id="planner">
+            <div class="product-top">
+              <span class="product-pill" data-i18n="pill.finance">المال والثروات</span>
+              <span class="product-badge" data-i18n="badge.live">متاح الآن</span>
+            </div>
+            <h3 data-i18n="p.planner.title">EISAX Planner</h3>
+            <p class="product-sub" data-i18n="p.planner.sub">ذكاء الإقراض وقرارات التمويل</p>
+            <p data-i18n="p.planner.desc">حساب القدرة على الاقتراض، فحص الالتزامات ومحاكاة السيناريوهات لدعم قرارات تمويلية أذكى.</p>
+            <ul>
+              <li data-i18n="p.planner.f1">حاسبة متطورة للقروض والالتزامات المالية</li>
+              <li data-i18n="p.planner.f2">تخطيط متعدد السيناريوهات لمستقبل الديون</li>
+              <li data-i18n="p.planner.f3">مقارنة عروض البنوك ودعم القرار الذكي</li>
+            </ul>
+            <a href="https://planner.eisax.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.visit">زيارة المنصة ←</a>
+          </article>
+
+          <!-- 4. SaveBuddy AI -->
+          <article class="product-card" id="savebuddy">
+            <div class="product-top">
+              <span class="product-pill" data-i18n="pill.finance">المال والثروات</span>
+              <span class="product-badge" data-i18n="badge.sandbox">بيئة تجريبية حية</span>
+            </div>
+            <h3 data-i18n="p.save.title">SaveBuddy AI</h3>
+            <p class="product-sub" data-i18n="p.save.sub">العافية المالية والادخار التلقائي</p>
+            <p data-i18n="p.save.desc">مؤشر للصحة المالية، محاكاة للادخار الدقيق وتوجيهات مدعومة بالذكاء الاصطناعي لعادات مالية أفضل.</p>
+            <ul>
+              <li data-i18n="p.save.f1">مؤشر لحظي لتقييم الصحة المالية</li>
+              <li data-i18n="p.save.f2">قواعد ادخار تفاعلية ومحاكاة بنكية حية</li>
+              <li data-i18n="p.save.f3">إرشادات مخصصة ومحفزات ادخار ذكية</li>
+            </ul>
+            <a href="https://savebuddy.eisax.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.visit">زيارة المنصة ←</a>
+          </article>
+
+          <!-- 5. Digital Assets -->
+          <article class="product-card" id="digital">
+            <div class="product-top">
+              <span class="product-pill" data-i18n="pill.finance">المال والثروات</span>
+              <span class="product-badge badge-lab" data-i18n="badge.lab">قيد التطوير / R&D</span>
+            </div>
+            <h3 data-i18n="p.digital.title">الأصول الرقمية والترميز</h3>
+            <p class="product-sub" data-i18n="p.digital.sub">بنية تحتية مالية للمستقبل</p>
+            <p data-i18n="p.digital.desc">استكشاف البنية التحتية للأصول الرقمية وترميز الأصول الواقعية (RWA) وسير العمل المالي الآمن.</p>
+            <ul>
+              <li data-i18n="p.digital.f1">مفاهيم ومسارات ترميز الأصول والعقود الذكية</li>
+              <li data-i18n="p.digital.f2">بنية تشغيلية آمنة لحفظ وتداول الأصول الرقمية</li>
+              <li data-i18n="p.digital.f3">تصميم معماري متوافق مع الأطر التنظيمية</li>
+            </ul>
+            <a href="#company" class="text-link" data-i18n="common.learn">اعرف المزيد ←</a>
+          </article>
+
+          <!-- 6. Brevoya -->
+          <article class="product-card" id="brevoya">
+            <div class="product-top">
+              <span class="product-pill" data-i18n="pill.comm">الاتصالات</span>
+              <span class="product-badge" data-i18n="badge.live">متاح الآن</span>
+            </div>
+            <h3 data-i18n="p.brevoya.title">Brevoya</h3>
+            <p class="product-sub" data-i18n="p.brevoya.sub">اتصال فوري متعدد اللغات</p>
+            <p data-i18n="p.brevoya.desc">تواصل فوري مشفر وعابر للغات عبر المحادثات الصوتية ومكالمات الفيديو والرسائل المترجمة فورياً.</p>
+            <ul>
+              <li data-i18n="p.brevoya.f1">محادثات مشفرة ومكالمات فائقة الوضوح</li>
+              <li data-i18n="p.brevoya.f2">ترجمة فورية للصوت والنص أثناء المكالمات</li>
+              <li data-i18n="p.brevoya.f3">ملاحظات صوتية ذكية وتبادل مستندات آمن</li>
+            </ul>
+            <a href="https://brevoya.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.visit">زيارة المنصة ←</a>
+          </article>
+
+          <!-- 7. E-Quiz -->
+          <article class="product-card" id="equiz">
+            <div class="product-top">
+              <span class="product-pill" data-i18n="pill.edu">التعليم</span>
+              <span class="product-badge" data-i18n="badge.live">متاح الآن</span>
+            </div>
+            <h3 data-i18n="p.quiz.title">E-Quiz</h3>
+            <p class="product-sub" data-i18n="p.quiz.sub">تفاعل تعليمي ذكي للمعلمين والطلاب</p>
+            <p data-i18n="p.quiz.desc">إنشاء الاختبارات التفاعلية بالذكاء الاصطناعي ومشاركتها فوراً مع لوحة تحليلات تعليمية للمعلم.</p>
+            <ul>
+              <li data-i18n="p.quiz.f1">توليد فوري للاختبارات بمساعدة الذكاء الاصطناعي</li>
+              <li data-i18n="p.quiz.f2">مشاركة فورية وسلسة عبر الرابط ورمز QR</li>
+              <li data-i18n="p.quiz.f3">لوحة نتائج لحظية وتحليلات تفصيلية للأداء</li>
+            </ul>
+            <a href="https://quiz.eisax.com" target="_blank" rel="noopener" class="text-link" data-i18n="common.visit">زيارة المنصة ←</a>
+          </article>
+
+          <!-- 8. Innovation Lab -->
+          <article class="product-card" id="innovation">
+            <div class="product-top">
+              <span class="product-pill" data-i18n="pill.ventures">المشاريع</span>
+              <span class="product-badge badge-lab" data-i18n="badge.ventures">مشاريع ناشئة</span>
+            </div>
+            <h3 data-i18n="p.lab.title">مختبر EISAX للابتكار</h3>
+            <p class="product-sub" data-i18n="p.lab.sub">مشاريع جديدة وتقنيات استشرافية</p>
+            <p data-i18n="p.lab.desc">المساحة التي تختبر فيها EISAX أحدث التقنيات، وتتحقق من الأفكار وتحتضن مشاريع المستقبل.</p>
+            <ul>
+              <li data-i18n="p.lab.f1">وكلاء الذكاء الاصطناعي في قطاع الخدمات المالية</li>
+              <li data-i18n="p.lab.f2">تطبيقات البلوك تشين والأصول اللامركزية</li>
+              <li data-i18n="p.lab.f3">مشاريع وحلول تقنية تجريبية للمستقبل</li>
+            </ul>
+            <a href="#company" class="text-link" data-i18n="common.exploreVentures">استكشف المشاريع ←</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why EISAX Section -->
+    <section class="section shell" id="solutions">
+      <div class="statement-card">
+        <div>
+          <div class="section-kicker" data-i18n="solutions.kicker">لماذا EISAX</div>
+          <h2 data-i18n="solutions.title">التكنولوجيا يجب أن تزيل التعقيد، لا أن تضيف إليه.</h2>
+        </div>
+        <div class="principles">
+          <div><strong>01</strong><span data-i18n="solutions.p1">ذكاء اصطناعي عملي</span></div>
+          <div><strong>02</strong><span data-i18n="solutions.p2">تصميم يتمحور حول الإنسان</span></div>
+          <div><strong>03</strong><span data-i18n="solutions.p3">الأمان والحوكمة من البداية</span></div>
+          <div><strong>04</strong><span data-i18n="solutions.p4">بنية قابلة للتوسع عالمياً</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Company Section -->
+    <section class="section section-soft" id="company">
+      <div class="shell company-grid">
+        <div>
+          <div class="section-kicker" data-i18n="company.kicker">عن EISAX</div>
+          <h2 data-i18n="company.title">رؤية واحدة. حلول ذكية متعددة.</h2>
+        </div>
+        <div class="company-copy">
+          <p data-i18n="company.p1">EISAX منظومة تقنية متكاملة تُبنى في دولة الإمارات العربية المتحدة، وتركز على ابتكار منتجات ذكية تحل مشكلات تشغيلية واتخاذ القرار في العالم الحقيقي.</p>
+          <p data-i18n="company.p2">نجمع بين الخبرة العميقة في أسواق المال، والذكاء الاصطناعي، وتصميم المنتجات، والأتمتة العملية لبناء حلول قابلة للتطبيق وذات قيمة ملموسة.</p>
+          <div class="company-badges">
+            <span class="region-badge" data-i18n="company.region">🇦🇪 صُنع في دولة الإمارات العربية المتحدة</span>
+            <span class="region-badge" data-i18n="company.scope">بمعايير الأسواق المالية العالمية</span>
+          </div>
+          <a class="btn btn-primary" href="mailto:hello@eisax.com" data-i18n="company.cta">تواصل مع فريق EISAX</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="section shell final-cta" id="partnerships">
+      <div class="final-card">
+        <div class="final-mesh"></div>
+        <div class="final-glow-a"></div>
+        <div class="final-glow-b"></div>
+        <img src="/assets/logo-mark.webp" alt="" class="final-watermark" aria-hidden="true">
+        <div class="final-content">
+          <div class="section-kicker" data-i18n="final.kicker">الفصل القادم</div>
+          <h2 data-i18n="final.title">حلول مختلفة. منظومة واحدة. أثر أكبر.</h2>
+          <p data-i18n="final.desc">نبني جيلاً جديداً من المنتجات التقنية الذكية والمترابطة لننطلق بها من دولة الإمارات إلى العالم.</p>
+          <div class="final-actions">
+            <a class="btn btn-primary btn-glow" href="mailto:partnerships@eisax.com" data-i18n="final.cta">ابنِ معنا وشكّل المستقبل</a>
+            <a class="btn btn-ghost" href="#products" data-i18n="nav.explore">استكشف المنتجات</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="footer">
+    <div class="shell footer-grid">
+      <div>
+        <div class="brand footer-brand">
+          <img src="/assets/logo-mark.webp" alt="EisaX Logo" class="brand-logo-img" width="32" height="32">
+          <span class="brand-word">EisaX</span>
+        </div>
+        <p data-i18n="footer.tag">نبني منظومات ذكية لغدٍ أكثر ابتكاراً ونماءً.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#ecosystem" data-i18n="nav.ecosystem">المنظومة</a>
+        <a href="#products" data-i18n="nav.products">المنتجات</a>
+        <a href="#solutions" data-i18n="nav.solutions">الحلول</a>
+        <a href="#company" data-i18n="nav.company">عن EISAX</a>
+        <a href="/privacy" data-i18n="legal.privacy">سياسة الخصوصية</a>
+        <a href="/terms" data-i18n="legal.terms">شروط الاستخدام</a>
+        <a href="/disclaimer" data-i18n="legal.disclaimer">إخلاء المسؤولية</a>
+        <a href="mailto:hello@eisax.com">hello@eisax.com</a>
+        <a href="mailto:partnerships@eisax.com">partnerships@eisax.com</a>
+      </div>
+      <div class="footer-meta">
+        <div>© <span id="year"></span> EISAX FZ-LLC. <span data-i18n="footer.rights">جميع الحقوق محفوظة.</span></div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
