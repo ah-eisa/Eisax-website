@@ -14,6 +14,7 @@ const path = require('path');
   for (const width of [1440, 390]) {
     for (const [name, route, lang] of targets) {
       const page = await browser.newPage({ viewport: { width, height: 900 }, deviceScaleFactor: 1 });
+      await page.addInitScript(() => localStorage.setItem('eisax-lang', 'invalid-legacy-value'));
       const errors = [];
       page.on('pageerror', e => errors.push(e.message));
       const response = await page.goto(base + route, { waitUntil: 'networkidle' });
@@ -34,9 +35,16 @@ const path = require('path');
         structuredData: !!document.querySelector('script[type="application/ld+json"]')
       }));
       const row = { name, width, status: response.status(), errors, ...result };
+      if (width === 390 && name.startsWith('home-')) {
+        const toggle = page.locator('#mobileToggle');
+        await toggle.click();
+        row.mobileDrawerOpens = await page.locator('#mobileDrawer').getAttribute('aria-hidden') === 'false';
+        await page.keyboard.press('Escape');
+        row.mobileDrawerCloses = await page.locator('#mobileDrawer').getAttribute('aria-hidden') === 'true';
+      }
       results.push(row);
       await page.screenshot({ path: path.resolve(__dirname, `../screenshots/${name}-${width}.png`), fullPage: true });
-      if (row.status !== 200 || row.lang !== lang || row.dir !== (lang === 'ar' ? 'rtl' : 'ltr') || row.available !== 7 || row.future !== 2 || !row.academy || row.horizontalOverflow || errors.length || row.brokenLocalLinks.length || row.unnamedLinks || row.unnamedButtons || row.missingImageAlt || row.h1Count !== 1 || !row.canonical || !row.structuredData) {
+      if (row.status !== 200 || row.lang !== lang || row.dir !== (lang === 'ar' ? 'rtl' : 'ltr') || row.available !== 7 || row.future !== 2 || !row.academy || row.horizontalOverflow || errors.length || row.brokenLocalLinks.length || row.unnamedLinks || row.unnamedButtons || row.missingImageAlt || row.h1Count !== 1 || !row.canonical || !row.structuredData || row.mobileDrawerOpens === false || row.mobileDrawerCloses === false) {
         throw new Error(JSON.stringify(row));
       }
       await page.close();

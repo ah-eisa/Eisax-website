@@ -423,18 +423,9 @@ const storage = {
 
 // State handling
 const isArRoute = window.location.pathname.startsWith("/ar");
-const urlParams = new URLSearchParams(window.location.search);
-const queryLang = urlParams.get("lang");
-
-let lang = "en";
-if (isArRoute) {
-  lang = "ar";
-} else if (queryLang === "ar" || queryLang === "en") {
-  lang = queryLang;
-  storage.set("eisax-lang", lang);
-} else {
-  lang = storage.get("eisax-lang", "en");
-}
+// Language follows the canonical URL, not stale browser storage or a query
+// parameter. This keeps visible content aligned with hreflang and canonical.
+let lang = isArRoute ? "ar" : "en";
 
 let theme = storage.get("eisax-theme", "dark");
 
