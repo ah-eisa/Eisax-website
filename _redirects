@@ -1,35 +1,66 @@
-# Named Products — Live Tools & App Cards
-/eisax-planner    https://planner.eisax.com  301
-/eisax-planner/   https://planner.eisax.com  301
-/eisax-agent      /#investment               301
-/eisax-agent/     /#investment               301
-/wealthgate-ai    /#wealthgate               301
-/wealthgate-ai/   /#wealthgate               301
+# Current canonical product directories
+/products /products/ 301
+/products.html /products/ 301
+/ar-products /ar/products/ 301
+/ar-products/ /ar/products/ 301
+/ar-products.html /ar/products/ 301
+/ar.html /ar/ 301
 
-# Sections & Anchors
-/products         /products/                 301
-/platform         /#ecosystem                301
-/platform/        /#ecosystem                301
-/solutions        /#solutions                301
-/solutions/       /#solutions                301
-/partnerships     /#partnerships             301
-/partnerships/    /#partnerships             301
+# Historical single-platform narrative -> current company overview
+/platform /#ecosystem 301
+/platform/ /#ecosystem 301
+/platform.html /#ecosystem 301
+/ar-platform /ar/#ecosystem 301
+/ar-platform/ /ar/#ecosystem 301
+/ar-platform.html /ar/#ecosystem 301
+/solutions /#solutions 301
+/solutions/ /#solutions 301
+/solutions.html /#solutions 301
+/company /#company 301
+/company/ /#company 301
+/innovation /products/#future 301
 
-# Legacy Arabic Products
-/ar-products      /ar/products/              301
-/ar-products/     /ar/products/              301
+# Historical product-detail pages -> relevant current portfolio entries
+/eisax-intelligence /products/#investment 301
+/eisax-agent /products/#investment 301
+/eisax-agent/ /products/#investment 301
+/eisax-agent.html /products/#investment 301
+/wealthgate-ai /products/#wealthgate 301
+/wealthgate-ai/ /products/#wealthgate 301
+/wealthgate-ai.html /products/#wealthgate 301
+/eisax-planner /products/#planner 301
+/eisax-planner/ /products/#planner 301
+/eisax-planner.html /products/#planner 301
+/eisax-lab /products/#future 301
+/eisax-lab/ /products/#future 301
+/eisax-lab.html /products/#future 301
+/ar-eisax-agent /ar/products/#investment 301
+/ar-eisax-planner /ar/products/#planner 301
+/ar-eisax-lab /ar/products/#future 301
+/ar-wealthgate-ai /ar/products/#wealthgate 301
 
-# Legacy Portfolio & Blog 301 Redirects
-/insights     /                  301
-/insights/*   /                  301
-/blog         /                  301
-/blog/*       /                  301
-/about        /                  301
-/about/*      /                  301
-/contact      /                  301
-/contact/*    /                  301
-/projects     /                  301
-/projects/*   /                  301
-/cv           /                  301
-/experience   /                  301
-/certifications /                301
+# Historical partnerships and legal pages found in Search Console
+/partnerships /#partnerships 301
+/partnerships/ /#partnerships 301
+/partnerships.html /#partnerships 301
+/ar-partnerships /ar/#partnerships 301
+/ar-partnerships/ /ar/#partnerships 301
+/ar-partnerships.html /ar/#partnerships 301
+/legal /terms 301
+/legal.html /terms 301
+
+# Retired blog and personal-portfolio routes without standalone pages
+/insights /#company 301
+/insights.html /#company 301
+/insights/* /#company 301
+/blog / 301
+/blog/* / 301
+/about /#company 301
+/about/* /#company 301
+/contact /#partnerships 301
+/contact/* /#partnerships 301
+/projects /products/ 301
+/projects/* /products/ 301
+/cv /#company 301
+/experience /#company 301
+/certifications /#company 301

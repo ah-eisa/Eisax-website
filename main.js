@@ -3,7 +3,7 @@ const i18n = {
   "en": {
     "company.cta": "Talk to EISAX",
     "company.kicker": "ABOUT EISAX",
-    "company.p1": "EISAX is a UAE technology company whose primary focus is financial technology. Its communication and education products retain independent identities.",
+    "company.p1": "EISAX is the brand of EISAX FZ-LLC, a UAE technology company whose primary focus is financial technology. Its communication and education products retain independent identities.",
     "company.p2": "We build software and analytical tools. EISAX does not provide investment advice, brokerage, custody, discretionary management, lending approval or digital-asset exchange services through this website.",
     "company.region": "🇦🇪 Built in the United Arab Emirates",
     "company.scope": "Built for Scale",
@@ -76,7 +76,7 @@ const i18n = {
   "ar": {
     "company.cta": "تواصل مع فريق EISAX",
     "company.kicker": "عن EISAX",
-    "company.p1": "EISAX شركة تقنية إماراتية تركز أساسًا على التقنية المالية، وتحتفظ منتجات التواصل والتعليم بهويات مستقلة.",
+    "company.p1": "EISAX هي العلامة التجارية لشركة EISAX FZ-LLC، وهي شركة تقنية إماراتية تركز أساسًا على التقنية المالية. وتحتفظ منتجات التواصل والتعليم بهويات مستقلة.",
     "company.p2": "نبني برمجيات وأدوات تحليل. لا تقدم EISAX عبر هذا الموقع مشورة استثمارية أو وساطة أو حفظ أصول أو إدارة تقديرية أو موافقة ائتمانية أو خدمات تداول أصول رقمية.",
     "company.region": "🇦🇪 صُنع في دولة الإمارات العربية المتحدة",
     "company.scope": "مصممة للتوسع",
