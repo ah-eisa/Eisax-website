@@ -32,6 +32,7 @@ const i18n = {
     "node.connect": "Brevoya",
     "node.learn": "E-Quiz",
     "node.digital": "Digital Assets",
+    "node.academy": "E-Academy by EISAX",
 
     // Trust Strip
     "trust.title": "Built around five core principles",
@@ -207,6 +208,7 @@ const i18n = {
     "node.connect": "بريفويا",
     "node.learn": "إي-كويز",
     "node.digital": "الأصول الرقمية",
+    "node.academy": "E-Academy by EISAX",
 
     // Trust Strip
     "trust.title": "نبني منظومتنا حول خمسة مبادئ جوهرية",

@@ -15,6 +15,6 @@ Digital Assets and EISAX Lab are future/R&D with no MVP. EISAX Lab is an innovat
 
 ## Local checks
 
-Run `node tests/local-server.cjs`, then `node tests/preview.test.cjs`. The local server reproduces Cloudflare's clean legal URLs. The browser test covers English/Arabic, desktop/mobile, registry counts, navigation anchors, basic accessibility attributes, SEO metadata, JS errors and horizontal overflow. Screenshots are generated in ignored `screenshots/`.
+Run `node tests/local-server.cjs`, then `node tests/preview.test.cjs` and `node tests/orbit.test.cjs`. The local server reproduces Cloudflare's clean legal URLs. The browser checks cover English/Arabic, desktop/mobile, registry counts, navigation anchors, orbit positions and interactions, logo/text containment, basic accessibility attributes, SEO metadata, JS errors and horizontal overflow. Screenshots are generated in ignored `screenshots/`.
 
 No database or build pipeline is required for the corporate site. The corporate pages must not bypass protected product applications.

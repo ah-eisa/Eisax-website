@@ -453,6 +453,7 @@ body[dir="rtl"] .mobile-drawer.open {
   aspect-ratio: 1;
   position: relative;
   border-radius: 50%;
+  margin-bottom: 36px;
 }
 
 .orbit-glow {
@@ -511,7 +512,7 @@ body[dir="rtl"] .mobile-drawer.open {
 /* Central EisaX Hub */
 .hub {
   position: absolute;
-  inset: 33%;
+  inset: 29%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -527,7 +528,7 @@ body[dir="rtl"] .mobile-drawer.open {
   z-index: 5;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  padding: 16px;
+  padding: 12px;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
@@ -554,11 +555,15 @@ html[data-theme="light"] .hub {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  line-height: 1.15;
 }
 
 .hub-logo-img {
-  width: 54px;
-  height: 54px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
   filter: drop-shadow(0 6px 16px rgba(34, 211, 238, 0.5));
   animation: hubFloat 3.6s ease-in-out infinite;
@@ -573,7 +578,8 @@ html[data-theme="light"] .hub {
   font-weight: 900;
   letter-spacing: 0.06em;
   font-size: 1.18rem;
-  margin-top: 4px;
+  margin-top: 3px;
+  line-height: 1.1;
   background: linear-gradient(135deg, #ffffff, #a5f3fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -586,11 +592,14 @@ html[data-theme="light"] .hub-title {
 }
 
 .hub-sub {
-  font-size: 0.66rem;
+  font-size: 0.59rem;
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--cyan);
   text-transform: uppercase;
+  line-height: 1.2;
+  max-width: 100%;
+  text-wrap: balance;
 }
 
 html[data-theme="light"] .hub-sub {
@@ -636,7 +645,7 @@ html[data-theme="light"] .hub-sub {
 
 /* Specific Satellite Positions (Geometric Balance) */
 .node-7 {
-  top: 1%;
+  bottom: -5%;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -699,13 +708,24 @@ html[data-theme="light"] .hub-sub {
 }
 
 .node-1 {
+  top: 1%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.node-1:hover {
+  transform: translate(-50%, -3px) scale(1.04);
+  border-color: var(--cyan);
+  box-shadow: 0 12px 30px rgba(34, 211, 238, 0.35);
+}
+
+.node-8 {
   top: 17%;
   left: -2%;
 }
-.node-1:hover {
+.node-8:hover {
   transform: translateY(-3px) scale(1.04);
-  border-color: var(--cyan);
-  box-shadow: 0 12px 30px rgba(34, 211, 238, 0.35);
+  border-color: #818cf8;
+  box-shadow: 0 12px 30px rgba(129, 140, 248, 0.3);
 }
 
 /* Individual node icon styles */
@@ -716,6 +736,7 @@ html[data-theme="light"] .hub-sub {
 .node-5 .node-icon { background: rgba(59, 130, 246, 0.16); color: #60a5fa; }
 .node-6 .node-icon { background: rgba(168, 85, 247, 0.16); color: #c084fc; }
 .node-7 .node-icon { background: rgba(236, 72, 153, 0.16); color: var(--pink); }
+.node-8 .node-icon { background: rgba(129, 140, 248, 0.16); color: #818cf8; }
 
 /* Trust Strip */
 .trust-strip {
@@ -1364,7 +1385,7 @@ body[dir="rtl"] .legal-table th {
   .node-2 {
     right: 0%;
   }
-  .node-1 {
+  .node-8 {
     left: 0%;
   }
 }
@@ -1393,9 +1414,9 @@ body[dir="rtl"] .legal-table th {
   .hero-visual { margin-top: 20px; }
   .ecosystem-stage { transform: scale(0.88); }
   .hub { padding: 8px; }
-  .hub-logo-img { width: 42px; height: 42px; }
-  .hub-title { font-size: 0.95rem; }
-  .hub-sub { font-size: 0.58rem; }
+  .hub-logo-img { width: 34px; height: 34px; }
+  .hub-title { font-size: 0.9rem; }
+  .hub-sub { font-size: 0.5rem; line-height: 1.1; letter-spacing: 0.01em; max-width: 88%; }
   .node {
     min-width: 95px;
     padding: 6px 9px;
@@ -1404,13 +1425,14 @@ body[dir="rtl"] .legal-table th {
     border-radius: 10px;
   }
   .node-icon { width: 20px; height: 20px; font-size: 0.75rem; }
-  .node-7 { top: 0%; left: 50%; transform: translateX(-50%); }
+  .node-7 { bottom: -5%; left: 50%; transform: translateX(-50%); }
   .node-2 { top: 16%; right: -5%; }
   .node-3 { top: 50%; right: -9%; transform: translateY(-50%); }
   .node-4 { bottom: 10%; right: 0%; }
   .node-5 { bottom: 10%; left: 0%; }
   .node-6 { top: 50%; left: -9%; transform: translateY(-50%); }
-  .node-1 { top: 16%; left: -5%; }
+  .node-1 { top: 0%; left: 50%; transform: translateX(-50%); }
+  .node-8 { top: 16%; left: -5%; }
 
   .trust-inner {
     align-items: flex-start;
@@ -1424,6 +1446,10 @@ body[dir="rtl"] .legal-table th {
   .final-card { padding: 48px 20px; }
   .final-card h2 { font-size: 1.8rem; }
   .final-card p { font-size: 0.95rem; }
+}
+
+@media (max-width: 360px) {
+  .node-8 { left: -15%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
