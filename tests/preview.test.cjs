@@ -24,6 +24,8 @@ const path = require('path');
         dir: document.documentElement.dir || 'ltr',
         title: document.title,
         heroHeadlinePx: document.querySelector('.hero h1') ? Number.parseFloat(getComputedStyle(document.querySelector('.hero h1')).fontSize) : 0,
+        versionedStylesheet: Array.from(document.styleSheets).some(sheet => sheet.href && sheet.href.includes('styles.css?v=')),
+        versionedScript: Array.from(document.scripts).some(script => script.src && script.src.includes('main.js?v=')),
         available: document.querySelectorAll('[data-registry-grid="available"] .registry-card').length,
         future: document.querySelectorAll('[data-registry-grid="future"] .research-item').length,
         academy: !!document.querySelector('#academy'),
@@ -50,7 +52,7 @@ const path = require('path');
       }
       results.push(row);
       await page.screenshot({ path: path.resolve(__dirname, `../screenshots/${name}-${width}${javaScriptEnabled ? '' : '-nojs'}.png`), fullPage: true });
-      if (row.status !== 200 || row.lang !== lang || row.dir !== (lang === 'ar' ? 'rtl' : 'ltr') || row.available !== 7 || row.future !== 2 || !row.academy || (name.startsWith('home-') && (row.heroHeadlinePx > (width <= 680 ? 45 : 56) || row.activeLines !== 3 || row.activeOrbit !== 7 || row.digitalInOrbit)) || row.oldHeadline || row.horizontalOverflow || errors.length || row.brokenLocalLinks.length || row.unnamedLinks || row.unnamedButtons || row.missingImageAlt || row.h1Count !== 1 || !row.canonical || !row.structuredData || row.mobileDrawerOpens === false || row.mobileDrawerCloses === false) {
+      if (row.status !== 200 || row.lang !== lang || row.dir !== (lang === 'ar' ? 'rtl' : 'ltr') || row.available !== 7 || row.future !== 2 || !row.academy || !row.versionedStylesheet || (name.startsWith('home-') && (!row.versionedScript || row.heroHeadlinePx > (width <= 680 ? 45 : 56) || row.activeLines !== 3 || row.activeOrbit !== 7 || row.digitalInOrbit)) || row.oldHeadline || row.horizontalOverflow || errors.length || row.brokenLocalLinks.length || row.unnamedLinks || row.unnamedButtons || row.missingImageAlt || row.h1Count !== 1 || !row.canonical || !row.structuredData || row.mobileDrawerOpens === false || row.mobileDrawerCloses === false) {
         throw new Error(JSON.stringify(row));
       }
       await page.close();
