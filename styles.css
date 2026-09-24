@@ -1467,7 +1467,7 @@ body[dir="rtl"] .legal-table th {
 }
 
 @media (max-width: 360px) {
-  .node-8 { left: -15%; }
+  .node-8 { left: -20%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

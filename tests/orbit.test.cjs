@@ -44,7 +44,7 @@ function intersection(a, b) {
       const offscreen = boxes.nodes.filter(n => n.box.left < -1 || n.box.right > boxes.viewport + 1).map(n => n.name);
       const report = { width, language, nodes: boxes.nodes.length, collisions, escapes, offscreen, errors };
       reports.push(report);
-      if ([1440, 590, 390].includes(width)) await page.locator('.hero-visual').screenshot({ path: path.join(screenshots, `orbit-${language}-${width}-light.png`) });
+      if ([1440, 590, 390, 320].includes(width)) await page.locator('.hero-visual').screenshot({ path: path.join(screenshots, `orbit-${language}-${width}-light.png`) });
       if (width === 1440 && language === 'en') {
         for (const [node, target] of [['.node-1', '#investment'], ['.node-8', '#academy']]) {
           await page.locator(node).click();
