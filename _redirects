@@ -7,8 +7,7 @@
 /wealthgate-ai/   /#wealthgate               301
 
 # Sections & Anchors
-/products         /#products                 301
-/products/        /#products                 301
+/products         /products/                 301
 /platform         /#ecosystem                301
 /platform/        /#ecosystem                301
 /solutions        /#solutions                301
@@ -17,8 +16,8 @@
 /partnerships/    /#partnerships             301
 
 # Legacy Arabic Products
-/ar-products      /ar/#products              302
-/ar-products/     /ar/#products              302
+/ar-products      /ar/products/              301
+/ar-products/     /ar/products/              301
 
 # Legacy Portfolio & Blog 301 Redirects
 /insights     /                  301

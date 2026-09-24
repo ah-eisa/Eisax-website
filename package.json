@@ -1,0 +1,15 @@
+{
+  "name": "eisax-corporate-preview",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Static EISAX corporate site and reproducible browser validation",
+  "scripts": {
+    "serve": "node tests/local-server.cjs",
+    "render": "node scripts/render-pages.cjs",
+    "check:generated": "node scripts/render-pages.cjs --check",
+    "test": "npm run check:generated && node tests/preview.test.cjs && node tests/orbit.test.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}
