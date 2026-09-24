@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 (async () => {
-  const browser = await chromium.launch({ headless: true, channel: 'msedge' });
+  const browser = await chromium.launch({ headless: true });
   const base = process.env.PREVIEW_BASE || 'http://127.0.0.1:8765';
   const targets = [
     ['home-en', '/', 'en'], ['home-ar', '/ar/', 'ar'],
@@ -13,8 +13,9 @@ const path = require('path');
   fs.mkdirSync(path.resolve(__dirname, '../screenshots'), { recursive: true });
   for (const width of [1440, 390]) {
     for (const [name, route, lang] of targets) {
-      const page = await browser.newPage({ viewport: { width, height: 900 }, deviceScaleFactor: 1 });
-      await page.addInitScript(() => localStorage.setItem('eisax-lang', 'invalid-legacy-value'));
+      for (const javaScriptEnabled of [true, false]) {
+      const page = await browser.newPage({ viewport: { width, height: 900 }, deviceScaleFactor: 1, javaScriptEnabled });
+      if (javaScriptEnabled) await page.addInitScript(() => localStorage.setItem('eisax-lang', 'invalid-legacy-value'));
       const errors = [];
       page.on('pageerror', e => errors.push(e.message));
       const response = await page.goto(base + route, { waitUntil: 'networkidle' });
@@ -23,8 +24,12 @@ const path = require('path');
         dir: document.documentElement.dir || 'ltr',
         title: document.title,
         available: document.querySelectorAll('[data-registry-grid="available"] .registry-card').length,
-        future: document.querySelectorAll('[data-registry-grid="future"] .registry-card').length,
+        future: document.querySelectorAll('[data-registry-grid="future"] .research-item').length,
         academy: !!document.querySelector('#academy'),
+        activeLines: document.querySelectorAll('.worlds-grid .world-card').length,
+        activeOrbit: document.querySelectorAll('.hero-visual .node').length,
+        digitalInOrbit: !!document.querySelector('.hero-visual [data-target="digital"]'),
+        oldHeadline: document.body.textContent.includes('Eight focused solutions. One brand.') || document.body.textContent.includes('ثمانية حلول متخصصة'),
         horizontalOverflow: document.documentElement.scrollWidth > innerWidth + 2,
         brokenLocalLinks: [...document.querySelectorAll('a[href^="#"]')].filter(a => !document.querySelector(a.getAttribute('href'))).map(a => a.getAttribute('href')),
         unnamedLinks: [...document.querySelectorAll('a')].filter(a => !(a.textContent.trim() || a.getAttribute('aria-label') || a.querySelector('img[alt]'))).length,
@@ -34,8 +39,8 @@ const path = require('path');
         canonical: !!document.querySelector('link[rel="canonical"]'),
         structuredData: !!document.querySelector('script[type="application/ld+json"]')
       }));
-      const row = { name, width, status: response.status(), errors, ...result };
-      if (width === 390 && name.startsWith('home-')) {
+      const row = { name, width, javaScriptEnabled, status: response.status(), errors, ...result };
+      if (javaScriptEnabled && width === 390 && name.startsWith('home-')) {
         const toggle = page.locator('#mobileToggle');
         await toggle.click();
         row.mobileDrawerOpens = await page.locator('#mobileDrawer').getAttribute('aria-hidden') === 'false';
@@ -43,11 +48,12 @@ const path = require('path');
         row.mobileDrawerCloses = await page.locator('#mobileDrawer').getAttribute('aria-hidden') === 'true';
       }
       results.push(row);
-      await page.screenshot({ path: path.resolve(__dirname, `../screenshots/${name}-${width}.png`), fullPage: true });
-      if (row.status !== 200 || row.lang !== lang || row.dir !== (lang === 'ar' ? 'rtl' : 'ltr') || row.available !== 7 || row.future !== 2 || !row.academy || row.horizontalOverflow || errors.length || row.brokenLocalLinks.length || row.unnamedLinks || row.unnamedButtons || row.missingImageAlt || row.h1Count !== 1 || !row.canonical || !row.structuredData || row.mobileDrawerOpens === false || row.mobileDrawerCloses === false) {
+      await page.screenshot({ path: path.resolve(__dirname, `../screenshots/${name}-${width}${javaScriptEnabled ? '' : '-nojs'}.png`), fullPage: true });
+      if (row.status !== 200 || row.lang !== lang || row.dir !== (lang === 'ar' ? 'rtl' : 'ltr') || row.available !== 7 || row.future !== 2 || !row.academy || (name.startsWith('home-') && (row.activeLines !== 3 || row.activeOrbit !== 7 || row.digitalInOrbit)) || row.oldHeadline || row.horizontalOverflow || errors.length || row.brokenLocalLinks.length || row.unnamedLinks || row.unnamedButtons || row.missingImageAlt || row.h1Count !== 1 || !row.canonical || !row.structuredData || row.mobileDrawerOpens === false || row.mobileDrawerCloses === false) {
         throw new Error(JSON.stringify(row));
       }
       await page.close();
+      }
     }
   }
   await browser.close();
