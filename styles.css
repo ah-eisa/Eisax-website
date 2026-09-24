@@ -1485,7 +1485,6 @@ body[dir="rtl"] .legal-table th {
 .registry-fact { display: grid; grid-template-columns: minmax(105px, 32%) 1fr; gap: .75rem; padding-top: .45rem; border-top: 1px solid rgba(145,160,185,.2); }
 .registry-fact dt { font-size: .78rem; font-weight: 700; opacity: .7; }
 .registry-fact dd { margin: 0; font-size: .86rem; line-height: 1.5; }
-.registry-unavailable { margin-top: auto; font-weight: 700; opacity: .7; }
 .portfolio-more { margin: 2rem 0 0; text-align: center; }
 .portfolio-page { padding-top: 9rem; padding-bottom: 5rem; }
 .portfolio-page h1 { font-size: clamp(2.5rem, 5vw, 5rem); line-height: 1.1; max-width: 900px; margin: 1rem 0 1.5rem; }
