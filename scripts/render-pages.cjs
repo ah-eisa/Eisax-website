@@ -7,6 +7,8 @@ const vm = require('node:vm');
 const root = path.resolve(__dirname, '..');
 const pages = ['index.html', 'ar/index.html', 'products/index.html', 'ar/products/index.html'];
 const check = process.argv.includes('--check');
+// Git may check out the same generated files as LF or CRLF on Windows.
+const normalizeLineEndings = value => value.replace(/\r\n?/g, '\n');
 const registryScope = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'product-registry.js'), 'utf8'), registryScope);
 const products = registryScope.window.EISAX_REGISTRY;
@@ -80,7 +82,7 @@ function replaceBlock(html, kind, content) {
 }
 
 const mainPath = path.join(root, 'main.js');
-const main = fs.readFileSync(mainPath, 'utf8');
+const main = normalizeLineEndings(fs.readFileSync(mainPath, 'utf8'));
 const marker = '// Fail-safe Storage Helper';
 const markerAt = main.indexOf(marker);
 if (markerAt < 0) throw new Error('main.js storage boundary missing');
@@ -90,7 +92,7 @@ const pending = new Map();
 
 for (const relative of pages) {
   const lang = relative.startsWith('ar/') ? 'ar' : 'en';
-  let html = fs.readFileSync(path.join(root, relative), 'utf8');
+  let html = normalizeLineEndings(fs.readFileSync(path.join(root, relative), 'utf8'));
   const available = products.filter(p => p.sector !== 'future');
   const future = products.filter(p => p.sector === 'future');
   html = replaceBlock(html, 'available', `<div class="products-grid" data-registry-grid="available">\n${available.map(p => activeCard(p, lang)).join('\n')}\n</div>`);
@@ -113,7 +115,7 @@ for (const relative of ['index.html', 'ar/index.html']) {
 
 for (const [relative, content] of pending) {
   const destination = path.join(root, relative);
-  const existing = fs.readFileSync(destination, 'utf8');
+  const existing = normalizeLineEndings(fs.readFileSync(destination, 'utf8'));
   if (check && existing !== content) throw new Error(`Generated HTML is stale: ${relative}`);
   if (!check && existing !== content) fs.writeFileSync(destination, content, 'utf8');
 }
