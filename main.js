@@ -350,6 +350,57 @@ const i18n = {
   }
 };
 
+// Approved corporate positioning; legacy translations below remain for older
+// anchors but these keys are the canonical public narrative.
+Object.assign(i18n.en, {
+  "page.title": "EISAX | Financial Technology & Digital Products",
+  "page.desc": "EISAX is a technology company focused on financial technology, with independent products in communication and education.",
+  "hero.eyebrow": "FINANCIAL TECHNOLOGY IS OUR PRIMARY FOCUS",
+  "hero.line1": "Technology for",
+  "hero.line2": "better decisions",
+  "hero.line3": "and useful experiences.",
+  "hero.lead": "EISAX builds financial technology first, alongside independent communication and education products. Explore what is available today and what remains research.",
+  "hero.cta1": "Explore products",
+  "hero.cta2": "About EISAX",
+  "eco.title": "Independent products. One parent company.",
+  "eco.lead": "EISAX is the parent brand. Every product keeps its own identity, audience and access model; we do not present them as one shared technical platform.",
+  "world.finance.title": "Financial Technology",
+  "world.finance.desc": "Our primary focus: intelligence, wealth workflows, planning and financial wellness technology.",
+  "world.education.desc": "E-Quiz and E-Academy by EISAX serve different learning needs.",
+  "world.innovation.title": "Future research",
+  "world.innovation.desc": "Digital Assets and EISAX Lab are future R&D directions without an MVP.",
+  "products.title": "Products you can explore today.",
+  "products.lead": "Availability, maturity, audience and commercial model are shown separately. Protected applications remain protected.",
+  "company.p1": "EISAX is a UAE technology company whose primary focus is financial technology. Its communication and education products retain independent identities.",
+  "company.p2": "We build software and analytical tools. EISAX does not provide investment advice, brokerage, custody, discretionary management, lending approval or digital-asset exchange services through this website.",
+  "final.title": "Independent products. Clear purpose. Useful technology.",
+  "final.desc": "Discuss technology products and deployment options with EISAX. No pricing or commercial terms are implied here."
+});
+Object.assign(i18n.ar, {
+  "page.title": "EISAX | التقنية المالية والمنتجات الرقمية",
+  "page.desc": "EISAX شركة تقنية تركز أساسًا على التقنية المالية، ولديها منتجات مستقلة في التواصل والتعليم.",
+  "hero.eyebrow": "التقنية المالية محور تركيزنا الأساسي",
+  "hero.line1": "تقنية تساعد على",
+  "hero.line2": "قرارات أفضل",
+  "hero.line3": "وتجارب أكثر فائدة.",
+  "hero.lead": "تبني EISAX حلول التقنية المالية أولًا، إلى جانب منتجات مستقلة في التواصل والتعليم. تعرّف على المتاح اليوم وما يزال في مرحلة البحث.",
+  "hero.cta1": "استكشف المنتجات",
+  "hero.cta2": "عن EISAX",
+  "eco.title": "منتجات مستقلة. شركة أم واحدة.",
+  "eco.lead": "EISAX هي العلامة الأم. يحتفظ كل منتج بهويته وجمهوره وطريقة الوصول إليه؛ ولا نفترض أنها منصة تقنية مشتركة.",
+  "world.finance.title": "التقنية المالية",
+  "world.finance.desc": "تركيزنا الأساسي: الذكاء المالي وسير عمل الثروات والتخطيط وتقنية العافية المالية.",
+  "world.education.desc": "يخدم E-Quiz وE-Academy by EISAX احتياجات تعليمية مختلفة.",
+  "world.innovation.title": "بحوث مستقبلية",
+  "world.innovation.desc": "الأصول الرقمية ومختبر EISAX اتجاهان مستقبليان للبحث دون منتج أولي.",
+  "products.title": "منتجات يمكنك استكشافها اليوم.",
+  "products.lead": "نعرض نضج المنتج وإتاحته وجمهوره ونموذجه التجاري بشكل مستقل. تبقى التطبيقات المحمية محمية.",
+  "company.p1": "EISAX شركة تقنية إماراتية تركز أساسًا على التقنية المالية، وتحتفظ منتجات التواصل والتعليم بهويات مستقلة.",
+  "company.p2": "نبني برمجيات وأدوات تحليل. لا تقدم EISAX عبر هذا الموقع مشورة استثمارية أو وساطة أو حفظ أصول أو إدارة تقديرية أو موافقة ائتمانية أو خدمات تداول أصول رقمية.",
+  "final.title": "منتجات مستقلة. غاية واضحة. تقنية مفيدة.",
+  "final.desc": "تواصل معنا لمناقشة المنتجات التقنية وخيارات تشغيلها، دون افتراض أسعار أو شروط تجارية هنا."
+});
+
 // Fail-safe Storage Helper
 const storage = {
   get(key, fallback = null) {

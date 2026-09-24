@@ -1,34 +1,20 @@
-# EISAX Website V2
+# EISAX corporate website
 
-Official corporate portal for the **EISAX Intelligent Ecosystem**.
+Static corporate website deployed by Cloudflare Pages. Production is connected to `main`; changes must be reviewed on a separate preview branch before merge.
 
-## Positioning & Pillars
-EISAX builds intelligent, AI-native ecosystems across four strategic domains:
-- **Finance & Wealth:** Institutional analytics, wealth infrastructure, lending & financial wellness.
-- **Communication:** Real-time encrypted multilingual communication.
-- **Education:** Interactive classroom engagement & AI quiz creation.
-- **Ventures & Innovation:** Emerging tech incubation, Web3 & financial AI agents.
+## Architecture
 
----
+- `/` and `/ar/`: bilingual company overview and anchor-based sections.
+- `/products/` and `/ar/products/`: canonical portfolio directory.
+- `/privacy`, `/terms`, `/disclaimer`: corporate legal pages.
+- `product-registry.js`: corporate presentation source of truth for product maturity, access, audience and commercial model. It does not imply shared product infrastructure.
+- `portfolio.js`: renders cards from the registry on home and portfolio pages. Product applications remain on their own domains and retain their own identity and authentication.
+- `docs/PHASE1-AUDIT.md` and `docs/PHASE2-IA.md`: audit evidence and route decisions.
 
-## Live Product Ecosystem Links
-| Solution | Segment | Production Route |
-| :--- | :--- | :--- |
-| **EISAX Investment Intelligence (EISAX Agent)** | Finance & Wealth | [agent.eisax.com](https://agent.eisax.com) |
-| **WealthGate AI** | Digital Wealth Infrastructure | [wealthgateai.com](https://wealthgateai.com) |
-| **SaveBuddy AI** | Financial Wellness Sandbox | [savebuddy.eisax.com](https://savebuddy.eisax.com) |
-| **EISAX Planner** | Lending Intelligence | [planner.eisax.com](https://planner.eisax.com) |
-| **Brevoya** | Multilingual Communication | [brevoya.com](https://brevoya.com) |
-| **E-Quiz** | Smart Education Engagement | [quiz.eisax.com](https://quiz.eisax.com) |
-| **Digital Assets & Tokenization** | Future Finance | In Lab / R&D |
-| **EISAX Innovation Lab** | Ventures Incubator | Ventures |
+Digital Assets and EISAX Lab are future/R&D with no MVP. EISAX Lab is an innovation function, not a commercial product. E-Academy by EISAX is the approved Academy brand. No prices, clients, traction, licenses or partnerships are claimed.
 
----
+## Local checks
 
-## Technical Stack & Features
-- **Zero-Dependency Core:** Pure static HTML5, CSS3 & vanilla modern JavaScript.
-- **Responsive Mobile Navigation:** Full-featured sliding drawer navigation for mobile & tablet screens.
-- **Complete Bilingual i18n & RTL:** Seamless English / Arabic switching with dynamic page title, description, and directional alignment.
-- **Dynamic Themes:** Smooth Dark Mode (default) & Light Mode with persistent storage.
-- **Interactive Orbit:** 7 interactive ecosystem nodes linking directly to product areas.
-- **Cloudflare Pages Native:** Includes `_headers` (HSTS, CSP, cache headers), custom `404.html`, `robots.txt`, and `sitemap.xml`.
+Serve the repository root on port 8765, then run `node tests/preview.test.cjs`. The browser test covers English/Arabic, desktop/mobile, registry counts, navigation anchors, basic accessibility attributes, SEO metadata, JS errors and horizontal overflow. Screenshots are generated in ignored `screenshots/`.
+
+No database or build pipeline is required for the corporate site. The corporate pages must not bypass protected product applications.

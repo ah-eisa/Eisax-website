@@ -1434,3 +1434,19 @@ body[dir="rtl"] .legal-table th {
     scroll-behavior: auto !important;
   }
 }
+/* Portfolio facts: keep maturity, access, audience and commercial model distinct. */
+.registry-card { display: flex; flex-direction: column; gap: .55rem; }
+.registry-card .product-sub { min-height: 3.2em; }
+.registry-facts { margin: .6rem 0 1rem; display: grid; gap: .5rem; }
+.registry-fact { display: grid; grid-template-columns: minmax(105px, 32%) 1fr; gap: .75rem; padding-top: .45rem; border-top: 1px solid rgba(145,160,185,.2); }
+.registry-fact dt { font-size: .78rem; font-weight: 700; opacity: .7; }
+.registry-fact dd { margin: 0; font-size: .86rem; line-height: 1.5; }
+.registry-unavailable { margin-top: auto; font-weight: 700; opacity: .7; }
+.portfolio-more { margin: 2rem 0 0; text-align: center; }
+.portfolio-page { padding-top: 9rem; padding-bottom: 5rem; }
+.portfolio-page h1 { font-size: clamp(2.5rem, 5vw, 5rem); line-height: 1.1; max-width: 900px; margin: 1rem 0 1.5rem; }
+.portfolio-intro { max-width: 850px; font-size: 1.15rem; line-height: 1.7; margin-bottom: 3.5rem; }
+.portfolio-page h2 { font-size: clamp(1.7rem, 3vw, 2.8rem); }
+.portfolio-future { padding-top: 5rem; }
+.portfolio-disclosure { margin-top: 4rem; padding: 1.5rem; border: 1px solid rgba(145,160,185,.25); border-radius: 1rem; line-height: 1.7; }
+@media (max-width: 600px) { .registry-fact { grid-template-columns: 1fr; gap: .15rem; } .portfolio-page { padding-top: 7rem; } }
