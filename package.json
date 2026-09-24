@@ -7,7 +7,7 @@
     "serve": "node tests/local-server.cjs",
     "render": "node scripts/render-pages.cjs",
     "check:generated": "node scripts/render-pages.cjs --check",
-    "test": "npm run check:generated && node tests/preview.test.cjs && node tests/orbit.test.cjs"
+    "test": "npm run check:generated && node tests/preview.test.cjs && node tests/orbit.test.cjs && node tests/legal.test.cjs"
   },
   "devDependencies": {
     "playwright": "1.63.0"

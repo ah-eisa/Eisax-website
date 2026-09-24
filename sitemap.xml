@@ -20,16 +20,19 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url><loc>https://eisax.com/ar/privacy</loc><lastmod>2026-09-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url>
     <loc>https://eisax.com/terms</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url><loc>https://eisax.com/ar/terms</loc><lastmod>2026-09-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url>
     <loc>https://eisax.com/disclaimer</loc>
     <lastmod>2026-09-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url><loc>https://eisax.com/ar/disclaimer</loc><lastmod>2026-09-24</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
 </urlset>
