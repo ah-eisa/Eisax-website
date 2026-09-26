@@ -13,12 +13,16 @@ const registryScope = { window: {} };
 vm.runInNewContext(fs.readFileSync(path.join(root, 'product-registry.js'), 'utf8'), registryScope);
 const products = registryScope.window.EISAX_REGISTRY;
 if (!Array.isArray(products) || products.length !== 9) throw new Error('Expected nine approved registry entries');
+const principles = JSON.parse(fs.readFileSync(path.join(root, 'company-principles.json'), 'utf8'));
+if (!Array.isArray(principles) || principles.length !== 5 || principles.some(p => !p.en || !p.ar)) {
+  throw new Error('Expected five bilingual company principles');
+}
 
 const labels = {
   en: {
     finance: 'Financial Technology', communication: 'Communication', education: 'Education', future: 'Future / R&D',
     maturity: 'Maturity', access: 'Access', audience: 'Audience', commercial: 'Commercial model',
-    ready: 'Production or near-ready', futureStage: 'Future — no MVP',
+    stages: { production: 'Production', 'early-access': 'Early Access', 'release-candidate': 'Release Candidate', future: 'Future', 'future-r-and-d-function': 'Future / R&D function' },
     restricted: 'Restricted access', login: 'Sign-in required', 'public-tool': 'Public tool', 'public-demo': 'Public demo',
     'public-app': 'Public app', 'public-preview': 'Public preview', 'not-available': 'Not available',
     open: 'Visit product →', protected: 'Open protected application →'
@@ -26,7 +30,7 @@ const labels = {
   ar: {
     finance: 'التقنية المالية', communication: 'التواصل', education: 'التعليم', future: 'المستقبل والبحث',
     maturity: 'النضج', access: 'الوصول', audience: 'الجمهور', commercial: 'النموذج التجاري',
-    ready: 'منتج قائم أو قريب من الإطلاق', futureStage: 'مستقبلي — بلا منتج أولي',
+    stages: { production: 'منتج متاح', 'early-access': 'وصول مبكر', 'release-candidate': 'نسخة مرشحة للإطلاق', future: 'مستقبلي', 'future-r-and-d-function': 'مستقبلي / وظيفة بحث وتطوير' },
     restricted: 'وصول محمي', login: 'تسجيل دخول', 'public-tool': 'أداة عامة', 'public-demo': 'عرض عام',
     'public-app': 'تطبيق عام', 'public-preview': 'معاينة عامة', 'not-available': 'غير متاح',
     open: 'زيارة المنتج ←', protected: 'فتح التطبيق المحمي ←'
@@ -46,7 +50,7 @@ const esc = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', 
 function facts(p, lang) {
   const l = labels[lang];
   const pairs = [
-    [l.maturity, p.maturity.startsWith('future') ? l.futureStage : l.ready],
+    [l.maturity, l.stages[p.maturity]],
     [l.access, l[p.access]],
     [l.audience, lang === 'ar' ? audienceAr[p.id] : p.audience],
     [l.commercial, lang === 'ar' ? commercialAr(p) : p.commercial]
@@ -59,7 +63,7 @@ function activeCard(p, lang) {
   const l = labels[lang];
   const cta = p.access === 'login' || p.access === 'restricted' ? l.protected : l.open;
   return `  <article class="product-card registry-card" id="${esc(p.id)}">\n` +
-    `  <div class="product-top"><span class="product-pill">${esc(l[p.sector])}</span><span class="product-badge">${esc(l.ready)}</span></div>\n` +
+    `  <div class="product-top"><span class="product-pill">${esc(l[p.sector])}</span><span class="product-badge">${esc(l.stages[p.maturity])}</span></div>\n` +
     `  <h3>${esc(p.name)}</h3>\n  <p class="product-sub">${esc(p[lang])}</p>\n  ${facts(p, lang)}\n` +
     `  <a class="text-link" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">${esc(cta)}</a>\n  </article>`;
 }
@@ -67,7 +71,7 @@ function activeCard(p, lang) {
 function futureItem(p, lang) {
   const l = labels[lang];
   return `  <article class="research-item" id="${esc(p.id)}">\n` +
-    `  <span class="product-pill">${esc(l.futureStage)}</span>\n  <h3>${esc(p.name)}</h3>\n  <p>${esc(p[lang])}</p>\n  ${facts(p, lang)}\n  </article>`;
+    `  <span class="product-pill">${esc(l.stages[p.maturity])}</span>\n  <h3>${esc(p.name)}</h3>\n  <p>${esc(p[lang])}</p>\n  ${facts(p, lang)}\n  </article>`;
 }
 
 function replaceBlock(html, kind, content) {
@@ -87,6 +91,13 @@ const marker = '// Fail-safe Storage Helper';
 const markerAt = main.indexOf(marker);
 if (markerAt < 0) throw new Error('main.js storage boundary missing');
 const i18n = vm.runInNewContext(main.slice(0, markerAt) + '\ni18n;', {});
+for (const lang of ['en', 'ar']) {
+  principles.forEach((principle, index) => {
+    i18n[lang][`trust.i${index + 1}`] = principle[lang];
+    i18n[lang][`solutions.p${index + 1}`] = principle[lang];
+  });
+  i18n[lang]['company.principles'] = `${lang === 'ar' ? 'مبادئنا:' : 'Our principles:'} ${principles.map(p => p[lang]).join(lang === 'ar' ? '، ' : ', ')}.`;
+}
 const used = new Set(['page.title', 'page.desc']);
 const pending = new Map();
 
