@@ -8,6 +8,7 @@ Static corporate website deployed by Cloudflare Pages. Production is connected t
 - `/products/` and `/ar/products/`: canonical portfolio directory.
 - `/privacy`, `/terms`, `/disclaimer`: corporate legal pages.
 - `product-registry.js`: corporate presentation source of truth for product maturity, access, audience and commercial model. It does not imply shared product infrastructure.
+- `company-principles.json`: the single bilingual source for the five approved company principles, pre-rendered consistently into both homepages and the company section.
 - `scripts/render-pages.cjs`: pre-renders registry content into the English and Arabic HTML and keeps visible translations synchronized. The public pages contain the correct positioning even when JavaScript is disabled.
 - Product applications remain on their own domains and retain their own identity and authentication.
 - `docs/PHASE1-AUDIT.md` and `docs/PHASE2-IA.md`: audit evidence and route decisions.
@@ -22,3 +23,7 @@ Run `npm ci`, then `npx playwright install chromium`. Start `npm run serve` in o
 After changing `product-registry.js` or a visible translation in `main.js`, run `npm run render` and commit the generated HTML with the source. `npm test` rejects stale generated content.
 
 No database or build pipeline is required for the corporate site. The corporate pages must not bypass protected product applications.
+
+## Corporate closeout / frozen architecture
+
+The approved corporate information architecture and visual design are frozen after closeout. Further changes require a functional, SEO, legal, accessibility or security reason; do not continue copy or layout polishing. EISAX Intelligence is the investment-intelligence product family and analytical platform; EISAX Agent is its AI research/copilot interface, not a separate top-level commercial product. WealthGate AI and E-Quiz remain conservatively Early Access until their individual production UAT supports promotion.

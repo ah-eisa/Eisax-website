@@ -22,6 +22,7 @@
 
 # Historical product-detail pages -> relevant current portfolio entries
 /eisax-intelligence /products/#investment 301
+/public-markets-intelligence /products/#investment 301
 /eisax-agent /products/#investment 301
 /eisax-agent/ /products/#investment 301
 /eisax-agent.html /products/#investment 301
