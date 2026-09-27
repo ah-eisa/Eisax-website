@@ -63,7 +63,7 @@ for (const file of ['index.html', 'ar/index.html']) {
 
 for (const file of publicHtmlFiles()) {
   const html = read(file);
-  assert.doesNotMatch(html, /FZ-LLC|free ?zone|legalName|addressCountry|منطقة حرة|شركة تقنية إماراتية|الإمارات العربية المتحدة/iu, `${file}: unverified entity/location claim`);
+  assert.doesNotMatch(html, /\b(?:FZ[-\s]?LLC|UAE|United Arab Emirates|Dubai|Abu Dhabi)\b|free[-\s]?zone|legalName|addressCountry|منطقة\s*حرة|شركة\s+تقنية\s+إماراتية|الإمارات(?:\s+العربية\s+المتحدة)?/iu, `${file}: unverified entity/location claim`);
 }
 
 const sitemap = read('sitemap.xml');
