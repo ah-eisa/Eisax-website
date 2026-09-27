@@ -1,12 +1,12 @@
-# EISAX search and entity cleanup — 2026-09-24
+# EISAX search and entity cleanup — 2026-09-27
 
 Scope: the Git-connected Cloudflare Pages corporate website at `eisax.com`. The approved portfolio architecture and product applications are unchanged.
 
 ## Source of truth
 
-EISAX is the brand of EISAX FZ-LLC, a UAE technology company. Financial technology is its primary current focus. The corporate site is `https://eisax.com/`. Products have independent identities. Digital Assets and EISAX Lab remain future research without an MVP.
+EISAX is presented on `https://eisax.com/` as a technology brand. The site does not identify a legal entity, assert a free-zone license, or claim a country of establishment unless those details are verified and approved for publication. Financial technology is the current primary focus. Products have independent identities. Digital Assets and EISAX Lab remain future research without an MVP.
 
-The two homepage Organization JSON-LD blocks share `https://eisax.com/#organization`, the verified company name and legal name, UAE country, corporate URL and the existing official logo. `sameAs` is intentionally absent: no social account is linked from the current first-party corporate site or otherwise sufficiently verified as official. Public search results show a similarly named LinkedIn account with older claims; it has not been asserted as the same entity.
+The homepage uses Brand JSON-LD with the public brand name, URL, and site logo only. It omits legal name, organization type, location and `sameAs` because no legal identity, location or social profile is asserted by this page.
 
 ## Search Console snapshot and search results
 

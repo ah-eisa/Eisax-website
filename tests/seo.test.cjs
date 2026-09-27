@@ -50,16 +50,20 @@ assert.ok(!read('main.js').includes('EisaX'));
 for (const file of ['index.html', 'ar/index.html']) {
   const html = read(file);
   const block = html.match(/<script type="application\/ld\+json">([^<]+)<\/script>/);
-  assert.ok(block, `${file}: Organization JSON-LD missing`);
-  const organization = JSON.parse(block[1]);
-  assert.equal(organization['@type'], 'Organization');
-  assert.equal(organization['@id'], 'https://eisax.com/#organization');
-  assert.equal(organization.name, 'EISAX');
-  assert.equal(organization.legalName, 'EISAX FZ-LLC');
-  assert.equal(organization.url, 'https://eisax.com/');
-  assert.equal(organization.logo, 'https://eisax.com/assets/logo-mark.webp');
-  assert.equal(organization.address?.addressCountry, 'AE');
-  assert.ok(!organization.sameAs, 'Do not assert unverified social profiles');
+  assert.ok(block, `${file}: Brand JSON-LD missing`);
+  const brand = JSON.parse(block[1]);
+  assert.equal(brand['@type'], 'Brand');
+  assert.equal(brand['@id'], 'https://eisax.com/#brand');
+  assert.equal(brand.name, 'EISAX');
+  assert.equal(brand.url, 'https://eisax.com/');
+  assert.equal(brand.logo, 'https://eisax.com/assets/logo-mark.webp');
+  assert.ok(!brand.legalName && !brand.address, 'Do not assert unverified legal identity or location');
+  assert.ok(!brand.sameAs, 'Do not assert unverified social profiles');
+}
+
+for (const file of publicHtmlFiles()) {
+  const html = read(file);
+  assert.doesNotMatch(html, /FZ-LLC|free ?zone|legalName|addressCountry|منطقة حرة|شركة تقنية إماراتية|الإمارات العربية المتحدة/iu, `${file}: unverified entity/location claim`);
 }
 
 const sitemap = read('sitemap.xml');
@@ -104,4 +108,4 @@ for (const source of ['/platform', '/ar-platform', '/ar-products', '/eisax-agent
 assert.equal(redirects.get('/public-markets-intelligence'), '/products/#investment');
 assert.ok(!sitemap.includes('/public-markets-intelligence'));
 for (const file of pages.values()) assert.ok(!read(file).includes('href="/public-markets-intelligence'), `Legacy internal link in ${file}`);
-console.log(`${pages.size} canonical pages, Organization data, sitemap, robots and ${redirects.size} redirects verified.`);
+console.log(`${pages.size} canonical pages, brand metadata, sitemap, robots and ${redirects.size} redirects verified.`);
