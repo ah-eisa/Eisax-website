@@ -44,7 +44,7 @@ const audienceAr = {
 };
 const commercialAr = p => p.sector === 'future' ?
   (p.id === 'lab' ? 'ليست منتجًا تجاريًا' : 'غير محدد') :
-  (p.sector === 'finance' ? 'ترخيص مؤسسي / SaaS / اشتراك بحسب التشغيل' : 'اشتراك بحدود مجانية');
+  (p.sector === 'finance' ? 'ترخيص استخدام برمجيات / SaaS / اشتراك بحسب التشغيل' : 'اشتراك بحدود مجانية');
 const esc = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]);
 
 function facts(p, lang) {
