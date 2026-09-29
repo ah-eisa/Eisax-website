@@ -14,6 +14,11 @@ assert.deepEqual(maturity, {
   digital: 'future', lab: 'future-r-and-d-function'
 });
 assert.equal(registryScope.window.EISAX_REGISTRY.find(product => product.id === 'lab').commercial, 'Not a commercial product');
+const investment = registryScope.window.EISAX_REGISTRY.find(product => product.id === 'investment');
+const wealthgate = registryScope.window.EISAX_REGISTRY.find(product => product.id === 'wealthgate');
+assert.equal(investment.access, 'public-ai-interface');
+assert.equal(wealthgate.access, 'public-demo');
+assert.equal(wealthgate.url, 'https://wealthgateai.com/demo/login');
 const pages = new Map([
   ['/', 'index.html'], ['/ar/', 'ar/index.html'],
   ['/products/', 'products/index.html'], ['/ar/products/', 'ar/products/index.html'],
@@ -81,6 +86,27 @@ for (const [file, lang] of [['index.html', 'en'], ['ar/index.html', 'ar']]) {
   assert.ok(html.includes('data-i18n="node.investment">EISAX Intelligence</span>'), `${file}: orbit must show product family`);
   assert.ok(html.includes('EISAX Agent') && html.includes('EISAX Intelligence'), `${file}: product family/interface relationship missing`);
 }
+for (const [file, lang] of [
+  ['index.html', 'en'], ['products/index.html', 'en'],
+  ['ar/index.html', 'ar'], ['ar/products/index.html', 'ar']
+]) {
+  const html = read(file);
+  const agentCard = html.match(/<article class="product-card registry-card" id="investment">([\s\S]*?)<\/article>/)?.[1];
+  const wealthCard = html.match(/<article class="product-card registry-card" id="wealthgate">([\s\S]*?)<\/article>/)?.[1];
+  assert.ok(agentCard && wealthCard, `${file}: product cards missing`);
+  assert.ok(agentCard.includes(lang === 'en' ? 'Public AI interface' : 'واجهة ذكاء اصطناعي متاحة للجمهور'), `${file}: Agent access`);
+  assert.ok(agentCard.includes(lang === 'en' ? 'Try EISAX Agent →' : 'جرّب EISAX Agent ←'), `${file}: Agent CTA`);
+  assert.ok(agentCard.includes(lang === 'en' ? 'enterprise functionality may require controlled access' : 'قد تتطلب وظائف المؤسسات وصولًا خاضعًا للتحكم'), `${file}: enterprise access distinction`);
+  assert.ok(wealthCard.includes(lang === 'en' ? 'Public demo' : 'عرض عام'), `${file}: WealthGate access`);
+  assert.ok(wealthCard.includes(lang === 'en' ? 'read-only and uses synthetic data' : 'للقراءة فقط ويستخدم بيانات اصطناعية'), `${file}: demo limits`);
+  assert.ok(wealthCard.includes(lang === 'en' ? 'Explore live demo →' : 'استكشف العرض المباشر ←'), `${file}: WealthGate CTA`);
+  assert.ok(wealthCard.includes('href="https://wealthgateai.com/demo/login"'), `${file}: demo URL`);
+  assert.doesNotMatch(agentCard, /Open protected application|فتح التطبيق المحمي|access to the application remains protected|يظل الوصول إلى التطبيق محميًا/);
+}
+for (const [file, expected] of [
+  ['index.html', 'Access varies by product, with public tools and demos clearly identified.'],
+  ['ar/index.html', 'يختلف الوصول حسب المنتج، مع توضيح الأدوات والعروض التجريبية المتاحة للجمهور.']
+]) assert.ok(read(file).includes(expected), `${file}: product access summary`);
 const listed = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(match => match[1]);
 assert.deepEqual(new Set(listed), new Set([...pages.keys()].map(route => `https://eisax.com${route}`)), 'Sitemap must contain exactly the current indexable canonical pages');
 assert.equal(listed.length, pages.size, 'Duplicate sitemap URL');

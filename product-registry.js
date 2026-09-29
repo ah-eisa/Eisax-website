@@ -2,17 +2,17 @@
 window.EISAX_REGISTRY = [
   {
     id: 'investment', sector: 'finance', name: 'EISAX Intelligence',
-    maturity: 'early-access', access: 'restricted', audience: 'Financial institutions and research teams',
+    maturity: 'early-access', access: 'public-ai-interface', audience: 'Financial institutions and research teams',
     commercial: 'Enterprise license / SaaS / subscription, depending on deployment', url: 'https://agent.eisax.com',
-    en: 'Investment intelligence and analytical platform. EISAX Agent is its AI research and copilot interface; access to the application remains protected.',
-    ar: 'منصة للذكاء الاستثماري والتحليلات. EISAX Agent هي واجهة البحث والمساعد الذكي ضمن EISAX Intelligence؛ ويظل الوصول إلى التطبيق محميًا.'
+    en: 'Investment intelligence and analytical platform. EISAX Agent is its publicly accessible AI research and copilot interface; enterprise functionality may require controlled access.',
+    ar: 'منصة للذكاء الاستثماري والتحليلات. EISAX Agent هي واجهة البحث والمساعد الذكي المتاحة للجمهور ضمن EISAX Intelligence؛ وقد تتطلب وظائف المؤسسات وصولًا خاضعًا للتحكم.'
   },
   {
     id: 'wealthgate', sector: 'finance', name: 'WealthGate AI',
-    maturity: 'early-access', access: 'login', audience: 'Wealth managers and financial institutions',
-    commercial: 'Enterprise license / SaaS / subscription, depending on deployment', url: 'https://wealthgateai.com',
-    en: 'Digital wealth workflows and client-facing infrastructure. Sign-in is required for the application.',
-    ar: 'سير عمل للثروات وبنية رقمية لخدمة العملاء. يتطلب التطبيق تسجيل الدخول.'
+    maturity: 'early-access', access: 'public-demo', audience: 'Wealth managers and financial institutions',
+    commercial: 'Enterprise license / SaaS / subscription, depending on deployment', url: 'https://wealthgateai.com/demo/login',
+    en: 'Digital wealth workflows and client-facing infrastructure. The public demo is read-only and uses synthetic data.',
+    ar: 'سير عمل للثروات وبنية رقمية لخدمة العملاء. العرض التجريبي العام للقراءة فقط ويستخدم بيانات اصطناعية.'
   },
   {
     id: 'planner', sector: 'finance', name: 'EISAX Planner',
