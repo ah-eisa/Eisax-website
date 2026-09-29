@@ -23,17 +23,17 @@ const labels = {
     finance: 'Financial Technology', communication: 'Communication', education: 'Education', future: 'Future / R&D',
     maturity: 'Maturity', access: 'Access', audience: 'Audience', commercial: 'Commercial model',
     stages: { production: 'Production', 'early-access': 'Early Access', 'release-candidate': 'Release Candidate', future: 'Future', 'future-r-and-d-function': 'Future / R&D function' },
-    restricted: 'Restricted access', login: 'Sign-in required', 'public-tool': 'Public tool', 'public-demo': 'Public demo',
+    restricted: 'Restricted access', login: 'Sign-in required', 'public-ai-interface': 'Public AI interface', 'public-tool': 'Public tool', 'public-demo': 'Public demo',
     'public-app': 'Public app', 'public-preview': 'Public preview', 'not-available': 'Not available',
-    open: 'Visit product →', protected: 'Open protected application →'
+    open: 'Visit product →', protected: 'Open protected application →', agent: 'Try EISAX Agent →', wealthgate: 'Explore live demo →'
   },
   ar: {
     finance: 'التقنية المالية', communication: 'التواصل', education: 'التعليم', future: 'المستقبل والبحث',
     maturity: 'النضج', access: 'الوصول', audience: 'الجمهور', commercial: 'النموذج التجاري',
     stages: { production: 'منتج متاح', 'early-access': 'وصول مبكر', 'release-candidate': 'نسخة مرشحة للإطلاق', future: 'مستقبلي', 'future-r-and-d-function': 'مستقبلي / وظيفة بحث وتطوير' },
-    restricted: 'وصول محمي', login: 'تسجيل دخول', 'public-tool': 'أداة عامة', 'public-demo': 'عرض عام',
+    restricted: 'وصول محمي', login: 'تسجيل دخول', 'public-ai-interface': 'واجهة ذكاء اصطناعي متاحة للجمهور', 'public-tool': 'أداة عامة', 'public-demo': 'عرض عام',
     'public-app': 'تطبيق عام', 'public-preview': 'معاينة عامة', 'not-available': 'غير متاح',
-    open: 'زيارة المنتج ←', protected: 'فتح التطبيق المحمي ←'
+    open: 'زيارة المنتج ←', protected: 'فتح التطبيق المحمي ←', agent: 'جرّب EISAX Agent ←', wealthgate: 'استكشف العرض المباشر ←'
   }
 };
 const audienceAr = {
@@ -61,7 +61,7 @@ function facts(p, lang) {
 
 function activeCard(p, lang) {
   const l = labels[lang];
-  const cta = p.access === 'login' || p.access === 'restricted' ? l.protected : l.open;
+  const cta = p.id === 'investment' ? l.agent : p.id === 'wealthgate' ? l.wealthgate : p.access === 'login' || p.access === 'restricted' ? l.protected : l.open;
   return `  <article class="product-card registry-card" id="${esc(p.id)}">\n` +
     `  <div class="product-top"><span class="product-pill">${esc(l[p.sector])}</span><span class="product-badge">${esc(l.stages[p.maturity])}</span></div>\n` +
     `  <h3>${esc(p.name)}</h3>\n  <p class="product-sub">${esc(p[lang])}</p>\n  ${facts(p, lang)}\n` +
