@@ -8,7 +8,7 @@ const path = require('node:path');
   const browser = await chromium.launch({ headless: true });
   try {
     const sitemap = fs.readFileSync(path.join(__dirname, '../sitemap.xml'), 'utf8');
-    const pages = ['privacy', 'terms', 'disclaimer'];
+    const pages = ['privacy', 'terms', 'security', 'disclaimer'];
     for (const name of pages) {
       for (const [route, lang, other] of [[`/${name}`, 'en', `/ar/${name}`], [`/ar/${name}`, 'ar', `/${name}`]]) {
         assert.ok(sitemap.includes(`https://eisax.com${route}</loc>`), `Sitemap omits ${route}`);
@@ -35,7 +35,7 @@ const path = require('node:path');
               articleInsideViewport: bbox.left >= -1 && bbox.right <= innerWidth + 1,
               tableContained: !table || (regionBox.left >= -1 && regionBox.right <= innerWidth + 1 && scrollRegion.scrollWidth > scrollRegion.clientWidth),
               links: [...document.querySelectorAll('.footer-links a')].map(a => a.getAttribute('href')),
-              stylesheet: !!document.querySelector('link[href="/styles.css?v=7ae0245"]')
+              stylesheet: !!document.querySelector('link[href="/styles.css?v=7ae0245"], link[href="/styles.css?v=security-20260930"]')
             };
           });
           assert.equal(result.lang, lang, route);

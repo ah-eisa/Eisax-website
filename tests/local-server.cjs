@@ -15,7 +15,7 @@ http.createServer((req, res) => {
   catch { res.writeHead(400).end(); return; }
   if (pathname.includes('..') || /(^|\/)(\.|docs|tests|screenshots)(\/|$)/.test(pathname)) { res.writeHead(404).end(); return; }
   if (pageRedirects.has(pathname)) { res.writeHead(301, { Location: pageRedirects.get(pathname) }).end(); return; }
-  const redirects = { '/products': '/products/', '/ar/products': '/ar/products/', '/privacy': '/privacy.html', '/terms': '/terms.html', '/disclaimer': '/disclaimer.html', '/ar/privacy': '/ar/privacy.html', '/ar/terms': '/ar/terms.html', '/ar/disclaimer': '/ar/disclaimer.html' };
+  const redirects = { '/products': '/products/', '/ar/products': '/ar/products/', '/privacy': '/privacy.html', '/terms': '/terms.html', '/security': '/security.html', '/disclaimer': '/disclaimer.html', '/ar/privacy': '/ar/privacy.html', '/ar/terms': '/ar/terms.html', '/ar/security': '/ar/security.html', '/ar/disclaimer': '/ar/disclaimer.html' };
   if (redirects[pathname] && !redirects[pathname].endsWith('.html')) { res.writeHead(301, { Location: redirects[pathname] }).end(); return; }
   let relative = (redirects[pathname] || pathname).replace(/^\//, '');
   if (!relative || relative.endsWith('/')) relative += 'index.html';
