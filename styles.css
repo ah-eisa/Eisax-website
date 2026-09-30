@@ -1493,3 +1493,20 @@ body[dir="rtl"] .legal-table th {
 .portfolio-future { padding-top: 5rem; border-top: 1px dashed var(--line-strong); margin-top: 5rem; }
 .portfolio-disclosure { margin-top: 4rem; padding: 1.5rem; border: 1px solid rgba(145,160,185,.25); border-radius: 1rem; line-height: 1.7; }
 @media (max-width: 600px) { .registry-fact { grid-template-columns: 1fr; gap: .15rem; } .portfolio-page { padding-top: 7rem; } }
+
+/* Security route accessibility, scoped to the new page. */
+.security-skip {
+  position: fixed;
+  inset-block-start: 8px;
+  inset-inline-start: 8px;
+  z-index: 100;
+  padding: 8px 12px;
+  background: var(--panel-solid);
+  color: var(--text);
+  border-radius: 8px;
+  transform: translateY(-160%);
+}
+.security-skip:focus-visible { transform: none; }
+.security-surface :focus-visible { outline: 3px solid var(--accent-text); outline-offset: 3px; }
+.security-surface .legal-card { overflow-wrap: anywhere; }
+@media (max-width: 360px) { .security-surface .nav-actions .btn-primary { display: none; } }

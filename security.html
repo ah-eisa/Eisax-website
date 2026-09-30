@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Security | EISAX</title>
+  <meta name="description" content="Verified security information for the EISAX corporate website and the public access boundaries of EISAX products.">
+  <link rel="canonical" href="https://eisax.com/security">
+  <link rel="alternate" hreflang="en" href="https://eisax.com/security">
+  <link rel="alternate" hreflang="ar" href="https://eisax.com/ar/security">
+  <link rel="alternate" hreflang="x-default" href="https://eisax.com/security">
+  <link rel="icon" type="image/png" href="/assets/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/favicon.png">
+  <meta property="og:title" content="Security | EISAX">
+  <meta property="og:description" content="Verified security information for the EISAX corporate website and the public access boundaries of EISAX products.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://eisax.com/security">
+  <meta property="og:site_name" content="EISAX">
+  <meta property="og:image" content="https://eisax.com/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Security | EISAX">
+  <meta name="twitter:description" content="Verified security information for the EISAX corporate website and the public access boundaries of EISAX products.">
+  <meta name="twitter:image" content="https://eisax.com/assets/og-image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css?v=security-20260930">
+  <script>
+    let theme = "dark";
+    try { theme = localStorage.getItem("eisax-theme") || "dark"; } catch (_) {}
+    document.documentElement.dataset.theme = theme;
+  </script>
+</head>
+<body class="security-surface">
+  <a class="security-skip" href="#security-content">Skip to security content</a>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="site-header"><div class="shell nav-wrap">
+    <a class="brand" href="/" aria-label="EISAX Home"><img src="/assets/logo-mark.webp" alt="EISAX Logo" class="brand-logo-img" width="36" height="36"><span class="brand-word">EISAX</span></a>
+    <div class="nav-actions"><button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">◐</button><button class="lang-btn" id="langToggle" type="button" aria-label="Switch to Arabic">AR</button><a class="btn btn-small btn-primary" href="/">Home</a></div>
+  </div></header>
+  <main class="shell legal-page" id="security-content"><article class="legal-card">
+    <h1>Security</h1>
+    <div class="legal-meta"><strong>Scope:</strong> eisax.com and the public product access information below &nbsp;·&nbsp; <strong>Updated:</strong> September 2026</div>
+    <div class="legal-box"><p>This page separates controls observable on the EISAX corporate website from access information for individual products. Product services may use different controls; this page does not describe a shared security architecture.</p></div>
+
+    <h2>Corporate website</h2>
+    <p><code>eisax.com</code> is a public, static information site. It does not require an account to read its pages. The site stores the selected display theme in your browser so that the preference remains available on later visits. See the <a class="text-link" href="/privacy">Privacy Policy</a> for the site's data-handling notice.</p>
+    <p>The live website is served over HTTPS and currently sends a Content Security Policy, HTTP Strict Transport Security, a referrer policy, and browser permission restrictions. These are website-delivery settings, not a claim about controls in other EISAX products.</p>
+
+    <h2>Public product access</h2>
+    <p>Access varies by product. The <a class="text-link" href="https://wealthgateai.com/demo/login">WealthGate AI public demo</a> is read-only and uses synthetic data. This describes the public demo only, not a production WealthGate deployment.</p>
+    <p>The <a class="text-link" href="https://agent.eisax.com">EISAX Agent interface</a> is publicly accessible as part of EISAX Intelligence. Enterprise functionality may require controlled access. The public interface should not be treated as evidence that enterprise features are open to everyone.</p>
+
+    <h2>Security questions and reports</h2>
+    <p>For a security concern about this website or a listed product, use the existing EISAX contact address: <a class="text-link" href="mailto:partnerships@eisax.com">partnerships@eisax.com</a>. Include the affected URL and a concise description; do not include credentials or confidential client data in your first message.</p>
+  </article></main>
+  <footer class="footer"><div class="shell footer-grid"><div><div class="brand footer-brand"><img src="/assets/logo-mark.webp" alt="EISAX Logo" class="brand-logo-img" width="32" height="32"><span class="brand-word">EISAX</span></div><p>Building Intelligent Ecosystems for a Smarter Tomorrow.</p></div><div class="footer-links"><a href="/">Home</a><a href="/#ecosystem">Ecosystem</a><a href="/#products">Products</a><a href="/#solutions">Solutions</a><a href="/#company">Company</a><a href="/privacy">Privacy Policy</a><a href="/terms">Terms of Service</a><a href="/security" aria-current="page">Security</a><a href="/disclaimer">Disclaimer</a></div><div class="footer-meta">© <span id="year">2026</span> EISAX</div></div></footer>
+  <script>
+    const themeBtn = document.getElementById("themeToggle");
+    function updateThemeIcon() { themeBtn.textContent = document.documentElement.dataset.theme === "dark" ? "◐" : "◑"; }
+    updateThemeIcon();
+    themeBtn.addEventListener("click", () => { const next = document.documentElement.dataset.theme === "dark" ? "light" : "dark"; document.documentElement.dataset.theme = next; try { localStorage.setItem("eisax-theme", next); } catch (_) {} updateThemeIcon(); });
+    document.getElementById("langToggle").addEventListener("click", () => { try { localStorage.setItem("eisax-lang", "ar"); } catch (_) {} location.href = "/ar/security"; });
+  </script>
+</body>
+</html>

@@ -24,6 +24,7 @@ const pages = new Map([
   ['/products/', 'products/index.html'], ['/ar/products/', 'ar/products/index.html'],
   ['/privacy', 'privacy.html'], ['/ar/privacy', 'ar/privacy.html'],
   ['/terms', 'terms.html'], ['/ar/terms', 'ar/terms.html'],
+  ['/security', 'security.html'], ['/ar/security', 'ar/security.html'],
   ['/disclaimer', 'disclaimer.html'], ['/ar/disclaimer', 'ar/disclaimer.html']
 ]);
 
@@ -41,6 +42,7 @@ assert.deepEqual(new Set(publicHtmlFiles()), allowedHtml, 'Unexpected deployable
 
 for (const [route, file] of pages) {
   const html = read(file);
+  assert.ok(html.includes(`href="${route.startsWith('/ar') ? '/ar' : ''}/security"`), `${file}: security footer link`);
   const expectedUrl = `https://eisax.com${route}`;
   assert.match(html, new RegExp(`<link rel="canonical" href="${expectedUrl.replaceAll('.', '\\.')}"`), file);
   assert.ok(!html.includes('EisaX'), `${file}: legacy brand capitalization`);
